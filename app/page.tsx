@@ -10,7 +10,9 @@ export default function Home() {
 <Hero />
 <Services />
 <CTA />
+<p>VERZE 2.1</p>
 <footer />
+
     </main>
   );
 }
