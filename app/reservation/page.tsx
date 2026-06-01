@@ -33,10 +33,10 @@ const { error } = await supabase
   .from("reservations")
   .insert([formData]);
 
-  if (error) {
-    alert("Chyba při ukládání rezervace");
-    console.log(error);
-  } else {
+if (error) {
+  alert(JSON.stringify(error));
+  console.log(error);
+} else {
     alert(
       `Rezervace pro ${formData.name} ${formData.surname} byla odeslána 🔥`
     );
