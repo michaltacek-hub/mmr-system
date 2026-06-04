@@ -34,7 +34,9 @@ const { error } = await supabase
   .insert([formData]);
 
 if (error) {
-  alert(JSON.stringify(error));
+ alert(
+  "Rezervaci se nepodařilo uložit. Zkuste to prosím znovu."
+);
   console.log(error);
 } else {
     alert(
@@ -75,22 +77,17 @@ const availableTimes = [
 useEffect(() => {
   const fetchBookedTimes = async () => {
     if (!formData.reservation_date) return;
-    console.log("Datum z formuláře:", formData.reservation_date);
 
     const { data, error } = await supabase
       .from("reservations")
       .select("reservation_time")
       .eq("reservation_date", formData.reservation_date);
-console.log(formData.reservation_date);
-console.log(data);
     if (data) {
-      console.log("Data ze Supabase:", data);
       const times = data.map(
         (reservation) =>
           reservation.reservation_time.slice(0, 5)
       );
 
-      console.log(times);
 
       setBookedTimes(times);
     }
