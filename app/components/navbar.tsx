@@ -1,16 +1,14 @@
 import Image from "next/image";
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#f5efe6]/80 backdrop-blur-md border-b border-[#d8cfc2]">
-
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-
+<nav className="fixed top-0 left-0 w-full z-50 bg-[#f5efe6]">
+<div className="w-full flex items-center justify-end px-20 h-24">
 <Image
-  src="/navbar.png"
+  src="/navbar2.png"
   alt="Masáže Michelle"
-  width={1000}
-  height={500}
-  className="h-20 w-auto object-contain"
+  width={2000}
+  height={2000}
+  className="absolute left-20 top-4 h-60 w-auto z-50"
 />
 
         <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-wider">

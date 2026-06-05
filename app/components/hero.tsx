@@ -6,7 +6,7 @@ export default function Hero() {
 <div className="absolute inset-0">
 
   <Image
-    src="/hero.png"
+    src="/hero2.png"
     alt="Masáže Michelle"
     fill
     className="object-cover object-top"
@@ -23,16 +23,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-4xl">
 
-        <p className="uppercase tracking-[0.3em] text-sm mb-6 text-white">
-          míša
-        </p>
 
         <h1 className="text-6xl md:text-8xl font-semibold leading-tight mb-8">
           Péče o tělo <br /> i mysl
         </h1>
 
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-white leading-relaxed mb-10">
-          Elegantní masáže a wellness péče v přírodním minimalistickém stylu.
+          Elegantní masáže v přírodním minimalistickém stylu.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
