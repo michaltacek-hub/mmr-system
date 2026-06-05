@@ -125,6 +125,7 @@ useEffect(() => {
 <input
   type="text"
   placeholder="Jméno"
+  required
   value={formData.name}
   onChange={(e) =>
     setFormData({ ...formData, name: e.target.value })
@@ -134,6 +135,7 @@ useEffect(() => {
 <input
   type="text"
   placeholder="Příjmení"
+  required
   value={formData.surname}
   onChange={(e) =>
     setFormData({ ...formData, surname: e.target.value })
@@ -143,6 +145,7 @@ useEffect(() => {
 <input
   type="email"
   placeholder="Email"
+  required
   value={formData.email}
   onChange={(e) =>
     setFormData({ ...formData, email: e.target.value })
@@ -152,6 +155,9 @@ useEffect(() => {
 <input
   type="tel"
   placeholder="Telefon"
+  required
+  minLength={9}
+  pattern="[0-9+ ]+"
   value={formData.phone}
   onChange={(e) =>
     setFormData({ ...formData, phone: e.target.value })
@@ -159,6 +165,7 @@ useEffect(() => {
   className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
 />
          <select
+          required
   value={formData.service}
   onChange={(e) =>
     setFormData({ ...formData, service: e.target.value })
@@ -174,6 +181,7 @@ useEffect(() => {
 </select>
 <input
   type="date"
+  required
   value={formData.reservation_date}
   onChange={(e) =>
     setFormData({
@@ -184,6 +192,7 @@ useEffect(() => {
   className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
 />
 <select
+  required
   value={formData.reservation_time}
   onChange={(e) =>
     setFormData({
