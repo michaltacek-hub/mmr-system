@@ -39,7 +39,13 @@ if (error) {
 );
   console.log(error);
 } else {
-  await fetch("/api/send-email");
+  await fetch("/api/send-email", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(formData),
+});
     alert(
       `Rezervace pro ${formData.name} ${formData.surname} byla odeslána 🔥`
     );
