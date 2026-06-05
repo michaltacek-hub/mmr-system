@@ -39,6 +39,7 @@ if (error) {
 );
   console.log(error);
 } else {
+  await fetch("/api/send-email");
     alert(
       `Rezervace pro ${formData.name} ${formData.surname} byla odeslána 🔥`
     );
