@@ -68,18 +68,30 @@ reservation_time: "",
 const [bookedTimes, setBookedTimes] = useState<string[]>([]);
 const availableTimes = [
   "08:00",
+  "08:30",
   "09:00",
+  "09:30",
   "10:00",
+  "10:30",
   "11:00",
+  "11:30",
   "12:00",
+  "12:30",
   "13:00",
+  "13:30",
   "14:00",
+  "14:30",
   "15:00",
+  "15:30",
   "16:00",
+  "16:30",
   "17:00",
+  "17:30",
   "18:00",
+  "18:30",
   "19:00",
-  "20:00", 
+  "19:30",
+  "20:00",
 ];
 useEffect(() => {
   const fetchBookedTimes = async () => {
@@ -182,6 +194,7 @@ useEffect(() => {
 <input
   type="date"
   required
+  min={new Date().toISOString().split("T")[0]}
   value={formData.reservation_date}
   onChange={(e) =>
     setFormData({
@@ -204,8 +217,26 @@ useEffect(() => {
 >
   <option value="">Vyberte čas</option>
 
-  {availableTimes
-  .filter((time) => !bookedTimes.includes(time))
+{availableTimes
+  .filter((time) => {
+    if (bookedTimes.includes(time)) return false;
+
+    const today = new Date().toISOString().split("T")[0];
+
+    if (formData.reservation_date !== today) {
+      return true;
+    }
+
+    const [hours, minutes] = time.split(":").map(Number);
+
+    const slotTime = new Date();
+    slotTime.setHours(hours, minutes, 0, 0);
+
+    const minimumTime = new Date();
+    minimumTime.setHours(minimumTime.getHours() + 1);
+
+    return slotTime >= minimumTime;
+  })
   .map((time) => (
     <option key={time} value={time}>
       {time}
