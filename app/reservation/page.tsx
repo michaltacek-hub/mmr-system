@@ -8,6 +8,7 @@ const [formData, setFormData] = useState({
   email: "",
   phone: "",
   service: "",
+  duration: "",
   reservation_date: "",
 reservation_time: "",
   note: "",
@@ -59,6 +60,7 @@ if (error) {
   email: "",
   phone: "",
   service: "",
+  duration: "",
   reservation_date: "",
 reservation_time: "",
   note: "",
@@ -190,6 +192,27 @@ useEffect(() => {
   <option>Relaxační masáž</option>
   <option>Těhotenská masáž</option>
   <option>Maderoterapie</option>
+  
+  <select
+  required
+  value={formData.duration}
+  onChange={(e) =>
+    setFormData({
+      ...formData,
+      duration: e.target.value,
+    })
+  }
+  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+>
+  <option value="">
+    -- Vyberte délku --
+  </option>
+
+  <option value="45">45 minut</option>
+  <option value="60">60 minut</option>
+  <option value="90">90 minut</option>
+</select>
+
 </select>
 <input
   type="date"
