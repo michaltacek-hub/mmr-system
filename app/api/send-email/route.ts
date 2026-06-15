@@ -25,25 +25,14 @@ await resend.emails.send({
   to: body.email,
   subject: "📅 Potvrzení rezervace - Masáže Michelle",
   html: `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; color: #333; line-height: 1.6;">
+    <p style="color:#000000;">
+  Zdravíme Vás z Masáží Michelle,
+</p>
 
-    <div style="text-align:center;">
-      <img
-        src="https://masazemichelle.cz/navbar2.png"
-        alt="Masáže Michelle"
-        width="180"
-      />
-    </div>
-
-    <h2 style="margin-top:30px;">❤️ Děkujeme za rezervaci</h2>
-
-    <p>Zdravíme Vás z Masáží Michelle,</p>
-
-    <p>
-      Děkujeme za Vaši rezervaci.
-      Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
-    </p>
-
+<p style="color:#000000;">
+  Děkujeme za Vaši rezervaci.
+  Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
+</p>
     <div style="
       background:#f8f8f8;
       border-left:4px solid #d4af37;
