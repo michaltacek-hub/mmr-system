@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     });
 await resend.emails.send({
   from: "Masáže Michelle <rezervace@masazemichelle.cz>",
-  to: "body.email",
+  to: body.email,
   subject: "Potvrzení rezervace - Masáže Michelle",
   html: `
     <h2>Děkujeme za rezervaci ❤️</h2>
