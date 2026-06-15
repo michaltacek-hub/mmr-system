@@ -178,22 +178,24 @@ useEffect(() => {
   }
   className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
 />
-         <select
-          required
+<select
+  required
   value={formData.service}
   onChange={(e) =>
     setFormData({ ...formData, service: e.target.value })
   }
   className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
 >
-<option value="">
-  -- Vyberte službu --
-</option>
+  <option value="">
+    -- Vyberte službu --
+  </option>
+
   <option>Relaxační masáž</option>
   <option>Těhotenská masáž</option>
   <option>Maderoterapie</option>
-  
-  <select
+</select>
+
+<select
   required
   value={formData.duration}
   onChange={(e) =>
@@ -213,7 +215,6 @@ useEffect(() => {
   <option value="90">90 minut</option>
 </select>
 
-</select>
 <input
   type="date"
   required
