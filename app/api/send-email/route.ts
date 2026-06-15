@@ -39,10 +39,6 @@ await resend.emails.send({
       Zdravíme Vás z Masáží Michelle,
     </p>
 
-    <p style="margin-bottom:15px;">
-      Děkujeme za Vaši rezervaci.
-    </p>
-
     <p style="margin-bottom:30px;">
       Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
     </p>
