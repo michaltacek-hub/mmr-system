@@ -23,51 +23,82 @@ export async function POST(request: Request) {
 await resend.emails.send({
   from: "Masáže Michelle <rezervace@masazemichelle.cz>",
   to: body.email,
-  subject: "📅Potvrzení rezervace - Masáže Michelle",
-  html:`
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+  subject: "📅 Potvrzení rezervace - Masáže Michelle",
+  html: `
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; color: #333; line-height: 1.6;">
 
-   <div style="text-align:center;">
-  <img
-    src="https://masazemichelle.cz/navbar2.png"
-    alt="Masáže Michelle"
-    width="180"
-  />
-</div>
+    <div style="text-align:center;">
+      <img
+        src="https://masazemichelle.cz/navbar2.png"
+        alt="Masáže Michelle"
+        width="180"
+      />
+    </div>
 
-<h2>Děkujeme za rezervaci ❤️</h2>
+    <h2 style="margin-top:30px;">❤️ Děkujeme za rezervaci</h2>
 
-<p>Zdravíme Vás z Masáží Michelle,</p>
+    <p>Zdravíme Vás z Masáží Michelle,</p>
 
-<p>
-  děkujeme za Vaši rezervaci.
-  Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
-</p>
+    <p>
+      Děkujeme za Vaši rezervaci.
+      Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
+    </p>
 
-<p><strong>Služba:</strong> ${body.service}</p>
-<p><strong>Datum:</strong> ${body.reservation_date}</p>
-<p><strong>Čas:</strong> ${body.reservation_time}</p>
+    <div style="
+      background:#f8f8f8;
+      border-left:4px solid #d4af37;
+      padding:15px;
+      margin:25px 0;
+      border-radius:6px;
+    ">
+      <p style="margin:5px 0;">
+        💆 <strong>Služba:</strong> ${body.service}
+      </p>
 
-<p>
-  Pokud bude potřeba cokoliv změnit nebo upřesnit,
-  budeme Vás kontaktovat.
-</p>
+      <p style="margin:5px 0;">
+        📅 <strong>Datum:</strong> ${body.reservation_date}
+      </p>
 
-<p>
-  S pozdravem,<br>
-  Masáže Michelle
-</p>
+      <p style="margin:5px 0;">
+        🕒 <strong>Čas:</strong> ${body.reservation_time}
+      </p>
+    </div>
 
-<hr>
+    <p>
+      Pokud bude potřeba cokoliv změnit nebo upřesnit,
+      budeme Vás kontaktovat.
+    </p>
 
-<p style="font-size:12px;color:#666;">
-  Masáže Michelle<br>
-  Nádražní 564, 563 01 Lanškroun<br>
-  Tel.: 735 958 842<br>
-  <a href="https://masazemichelle.cz">
-    www.masazemichelle.cz
-  </a>
-</p>
+    <p>
+      V případě dotazů nás neváhejte kontaktovat.
+    </p>
+
+    <p>
+      S pozdravem,<br>
+      <strong>Masáže Michelle</strong>
+    </p>
+
+    <hr style="margin:30px 0; border:none; border-top:1px solid #ddd;">
+
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td style="vertical-align:top; padding-right:15px;">
+          <img
+            src="https://masazemichelle.cz/navbar2.png"
+            alt="Masáže Michelle"
+            width="70"
+          />
+        </td>
+
+        <td style="font-size:13px; color:#666; vertical-align:top;">
+          <strong style="color:#333;">Masáže Michelle</strong><br>
+          📍 Nádražní 564, 563 01 Lanškroun<br>
+          📞 735 958 842<br>
+          ✉️ rezervace@masazemichelle.cz<br>
+          🌐 <a href="https://masazemichelle.cz">www.masazemichelle.cz</a>
+        </td>
+      </tr>
+    </table>
 
   </div>
 `,
