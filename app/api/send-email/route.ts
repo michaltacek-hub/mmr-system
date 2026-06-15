@@ -9,10 +9,8 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: "Masáže Michelle <rezervace@masazemichelle.cz>",
       to: "rezervace@masazemichelle.cz",
-      subject: "Nová rezervace - Masáže Michelle",
+      subject: `📅 Nová rezervace: ${body.name} ${body.surname}`,
       html: `
-        <h2>Nová rezervace</h2>
-
         <p><strong>Jméno:</strong> ${body.name} ${body.surname}</p>
         <p><strong>Email:</strong> ${body.email}</p>
         <p><strong>Telefon:</strong> ${body.phone}</p>
@@ -25,22 +23,54 @@ export async function POST(request: Request) {
 await resend.emails.send({
   from: "Masáže Michelle <rezervace@masazemichelle.cz>",
   to: body.email,
-  subject: "Potvrzení rezervace - Masáže Michelle",
-  html: `
-    <h2>Děkujeme za rezervaci ❤️</h2>
+  subject: "📅Potvrzení rezervace - Masáže Michelle",
+  html:`
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
 
-    <p>Dobrý den ${body.name},</p>
+   <div style="text-align:center;">
+  <img
+    src="https://masazemichelle.cz/navbar2.png"
+    alt="Masáže Michelle"
+    width="180"
+  />
+</div>
 
-    <p>Vaše rezervace byla úspěšně přijata.</p>
+<h2>Děkujeme za rezervaci ❤️</h2>
 
-    <p><strong>Služba:</strong> ${body.service}</p>
-    <p><strong>Datum:</strong> ${body.reservation_date}</p>
-    <p><strong>Čas:</strong> ${body.reservation_time}</p>
+<p>Zdravíme Vás z Masáží Michelle,</p>
 
-    <p>V případě potřeby Vás budeme kontaktovat.</p>
+<p>
+  děkujeme za Vaši rezervaci.
+  Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
+</p>
 
-    <p>Masáže Michelle</p>
-  `,
+<p><strong>Služba:</strong> ${body.service}</p>
+<p><strong>Datum:</strong> ${body.reservation_date}</p>
+<p><strong>Čas:</strong> ${body.reservation_time}</p>
+
+<p>
+  Pokud bude potřeba cokoliv změnit nebo upřesnit,
+  budeme Vás kontaktovat.
+</p>
+
+<p>
+  S pozdravem,<br>
+  Masáže Michelle
+</p>
+
+<hr>
+
+<p style="font-size:12px;color:#666;">
+  Masáže Michelle<br>
+  Nádražní 564, 563 01 Lanškroun<br>
+  Tel.: 735 958 842<br>
+  <a href="https://masazemichelle.cz">
+    www.masazemichelle.cz
+  </a>
+</p>
+
+  </div>
+`,
 });
     return Response.json(data);
   } catch (error) {
