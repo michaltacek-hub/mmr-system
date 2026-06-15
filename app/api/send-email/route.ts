@@ -7,8 +7,8 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "michal.tacek@gmail.com",
+      from: "Masáže Michelle <rezervace@masazemichelle.cz>",
+      to: "rezervace@masazemichelle.cz",
       subject: "Nová rezervace - Masáže Michelle",
       html: `
         <h2>Nová rezervace</h2>
@@ -22,7 +22,26 @@ export async function POST(request: Request) {
         <p><strong>Poznámka:</strong> ${body.note || "-"}</p>
       `,
     });
+await resend.emails.send({
+  from: "Masáže Michelle <rezervace@masazemichelle.cz>",
+  to: "body.email",
+  subject: "Potvrzení rezervace - Masáže Michelle",
+  html: `
+    <h2>Děkujeme za rezervaci ❤️</h2>
 
+    <p>Dobrý den ${body.name},</p>
+
+    <p>Vaše rezervace byla úspěšně přijata.</p>
+
+    <p><strong>Služba:</strong> ${body.service}</p>
+    <p><strong>Datum:</strong> ${body.reservation_date}</p>
+    <p><strong>Čas:</strong> ${body.reservation_time}</p>
+
+    <p>V případě potřeby Vás budeme kontaktovat.</p>
+
+    <p>Masáže Michelle</p>
+  `,
+});
     return Response.json(data);
   } catch (error) {
     return Response.json({ error }, { status: 500 });
