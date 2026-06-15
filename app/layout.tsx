@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Masáže Michelle",
+  title: "Masáže Michelle Lanškroun",
   description: "Relaxační, těhotenské masáže a maderoterapie v Lanškrouně",
 };
 
