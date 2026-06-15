@@ -25,14 +25,20 @@ await resend.emails.send({
   to: body.email,
   subject: "📅 Potvrzení rezervace - Masáže Michelle",
   html: `
-    <p style="color:#000000;">
-  Zdravíme Vás z Masáží Michelle,
-</p>
+  <div style="
+  background-color:#ffffff;
+  color:#333333;
+  padding:20px;
+">  
+  <h2 style="margin-top:30px;">❤️ Děkujeme za rezervaci</h2>
 
-<p style="color:#000000;">
-  Děkujeme za Vaši rezervaci.
-  Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
-</p>
+    <p>Zdravíme Vás z Masáží Michelle,</p>
+
+    <p>
+      Děkujeme za Vaši rezervaci.
+      Termín byl úspěšně přijat a těšíme se na Vaši návštěvu.
+    </p>
+
     <div style="
       background:#f8f8f8;
       border-left:4px solid #d4af37;
