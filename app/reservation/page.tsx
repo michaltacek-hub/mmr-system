@@ -87,15 +87,44 @@ useEffect(() => {
       .from("reservations")
       .select("reservation_time, duration")
       .eq("reservation_date", formData.reservation_date);
-    if (data) {
-      const times = data.map(
-        (reservation) =>
-          reservation.reservation_time.slice(0, 5)
+if (data) {
+  const blockedSlots: string[] = [];
+
+  data.forEach((reservation) => {
+    const startTime = reservation.reservation_time.slice(0, 5);
+
+    const [hours, minutes] = startTime
+      .split(":")
+      .map(Number);
+
+    const duration =
+      Number(reservation.duration) + 15;
+
+    const slotCount = duration / 15;
+
+    for (let i = 0; i < slotCount; i++) {
+      const slotDate = new Date();
+
+      slotDate.setHours(hours, minutes, 0, 0);
+
+      slotDate.setMinutes(
+        slotDate.getMinutes() + i * 15
       );
 
+      const blockedTime = `${slotDate
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${slotDate
+        .getMinutes()
+        .toString()
+        .padStart(2, "0")}`;
 
-      setBookedTimes(times);
+      blockedSlots.push(blockedTime);
     }
+  });
+
+  setBookedTimes(blockedSlots);
+}
 
     if (error) {
       console.log(error);
