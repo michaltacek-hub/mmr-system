@@ -182,7 +182,11 @@ useEffect(() => {
   required
   value={formData.service}
   onChange={(e) =>
-    setFormData({ ...formData, service: e.target.value })
+    setFormData({
+      ...formData,
+      service: e.target.value,
+      duration: "",
+    })
   }
   className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
 >
@@ -190,9 +194,37 @@ useEffect(() => {
     -- Vyberte službu --
   </option>
 
-  <option>Relaxační masáž</option>
-  <option>Těhotenská masáž</option>
-  <option>Maderoterapie</option>
+  <option value="Klasická masáž">
+    Klasická masáž
+  </option>
+
+  <option value="Relaxační masáž">
+    Relaxační masáž
+  </option>
+
+  <option value="Těhotenská masáž - kompletní relax">
+    Těhotenská masáž - kompletní relax
+  </option>
+
+  <option value="Základní uvolnění">
+    Základní uvolnění
+  </option>
+
+  <option value="Maderoterapie">
+    Maderoterapie
+  </option>
+
+  <option value="Maderoterapie + zábal">
+    Maderoterapie + zábal
+  </option>
+
+  <option value="Zábal">
+    Zábal
+  </option>
+
+  <option value="Záda + šíje">
+    Záda + šíje
+  </option>
 </select>
 
 <select
@@ -210,9 +242,40 @@ useEffect(() => {
     -- Vyberte délku --
   </option>
 
-  <option value="45">45 minut</option>
-  <option value="60">60 minut</option>
-  <option value="90">90 minut</option>
+  {formData.service === "Klasická masáž" && (
+    <option value="90">90 minut</option>
+  )}
+
+  {formData.service === "Relaxační masáž" && (
+    <option value="60">60 minut</option>
+  )}
+
+  {formData.service === "Těhotenská masáž - kompletní relax" && (
+    <option value="60">60 minut</option>
+  )}
+
+  {formData.service === "Základní uvolnění" && (
+    <option value="45">45 minut</option>
+  )}
+
+  {formData.service === "Maderoterapie" && (
+    <>
+      <option value="60">60 minut</option>
+      <option value="90">90 minut</option>
+    </>
+  )}
+
+  {formData.service === "Maderoterapie + zábal" && (
+    <option value="90">90 minut</option>
+  )}
+
+  {formData.service === "Zábal" && (
+    <option value="30">30 minut</option>
+  )}
+
+  {formData.service === "Záda + šíje" && (
+    <option value="45">45 minut</option>
+  )}
 </select>
 
 <input
