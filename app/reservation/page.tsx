@@ -321,21 +321,36 @@ if (data) {
   .filter((time) => {
     if (bookedTimes.includes(time)) return false;
 
-    const today = new Date().toISOString().split("T")[0];
-
-    if (formData.reservation_date !== today) {
-      return true;
-    }
-
     const [hours, minutes] = time.split(":").map(Number);
 
     const slotTime = new Date();
-    slotTime.setHours(hours, minutes, 0, 0);
+    slotTime.setHours(hours, minutes, 0, 0, 0);
 
-    const minimumTime = new Date();
-    minimumTime.setHours(minimumTime.getHours() + 1);
+    // +2 hodiny předstih
+    const today = new Date().toISOString().split("T")[0];
 
-    return slotTime >= minimumTime;
+    if (formData.reservation_date === today) {
+      const minimumTime = new Date();
+      minimumTime.setHours(minimumTime.getHours() + 2);
+
+      if (slotTime < minimumTime) {
+        return false;
+      }
+    }
+
+    // kontrola konce pracovní doby
+    const duration =
+      Number(formData.duration || 0) + 15;
+
+    const endTime = new Date(slotTime);
+    endTime.setMinutes(
+      endTime.getMinutes() + duration
+    );
+
+    const closingTime = new Date(slotTime);
+    closingTime.setHours(20, 0, 0, 0);
+
+    return endTime <= closingTime;
   })
   .map((time) => (
     <option key={time} value={time}>
