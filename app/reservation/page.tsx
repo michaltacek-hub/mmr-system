@@ -324,7 +324,7 @@ if (data) {
     const [hours, minutes] = time.split(":").map(Number);
 
     const slotTime = new Date();
-    slotTime.setHours(hours, minutes, 0, 0, 0);
+    slotTime.setHours(hours, minutes, 0, 0,);
 
     // +2 hodiny předstih
     const today = new Date().toISOString().split("T")[0];
