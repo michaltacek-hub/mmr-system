@@ -13,24 +13,17 @@ export default function CTA() {
         </h2>
 
         <p className="mb-8 text-[#d7c9b8]">
-          Objednejte se online nebo mě kontaktujte.
+          Objednejte se online 
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-4">
 
-          <a
-  href="/rezervace"
+     <a
+  href="/reservation"
   className="inline-block bg-[#f5efe6] text-[#2f3e34] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
   Rezervovat online
 </a>
-
-          <a
-            href="tel:+420735958842"
-            className="border border-[#f5efe6] px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#2f3e34] transition"
-          >
-            📞 +420 735 958 842
-          </a>
 
         </div>
 
