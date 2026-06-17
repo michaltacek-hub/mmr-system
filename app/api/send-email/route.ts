@@ -15,6 +15,7 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${body.email}</p>
         <p><strong>Telefon:</strong> ${body.phone}</p>
         <p><strong>Služba:</strong> ${body.service}</p>
+        <p><strong>Délka:</strong> ${body.duration} min</p>
         <p><strong>Datum:</strong> ${body.reservation_date}</p>
         <p><strong>Čas:</strong> ${body.reservation_time}</p>
         <p><strong>Poznámka:</strong> ${body.note || "-"}</p>
@@ -52,6 +53,10 @@ await resend.emails.send({
     ">
       <p style="margin:5px 0;">
         💆 <strong>Služba:</strong> ${body.service}
+      </p>
+   
+      <p style="margin:5px 0;">
+        ⏱️ <strong>Délka:</strong> ${body.duration} min
       </p>
 
       <p style="margin:5px 0;">
