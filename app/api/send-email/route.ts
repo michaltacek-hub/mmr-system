@@ -57,7 +57,7 @@ await resend.emails.send({
    
       <p style="margin:5px 0;">
         ⏱️ <strong>Délka:</strong> ${body.duration} min
-      </p>
+    </p>
 
       <p style="margin:5px 0;">
         📅 <strong>Datum:</strong> ${body.reservation_date}

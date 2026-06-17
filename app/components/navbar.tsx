@@ -8,7 +8,7 @@ export default function Navbar() {
   alt="Masáže Michelle"
   width={2000}
   height={2000}
-  className="absolute left-20 top-4 h-60 w-auto z-50"
+  className="absolute left-2 top-2 h-32 md:left-20 md:top-4 md:h-60 w-auto z-50"
 />
 
         <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-wider">
