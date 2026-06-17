@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <section className="py-28 px-6">
+    <section id="sluzby" className="py-28 px-6">
 
       <div className="max-w-7xl mx-auto">
 

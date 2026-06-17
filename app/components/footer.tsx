@@ -14,11 +14,27 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-6 text-sm text-[#7b6a58]">
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">Kontakt</a>
-        </div>
+      <div className="flex gap-6 text-sm text-[#7b6a58]">
+  <a
+    href="https://www.instagram.com/_masazemichelle/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Instagram
+  </a>
+
+  <a
+    href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Facebook
+  </a>
+
+  <a href="#kontakt">
+    Kontakt
+  </a>
+</div>
 
       </div>
 

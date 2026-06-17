@@ -13,9 +13,9 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-wider">
 
-          <a href="#" className="hover:text-[#7b6a58] transition">
-            Služby
-          </a>
+         <a href="#sluzby" className="hover:text-[#7b6a58] transition">
+  Služby
+</a>
 
           <a href="#" className="hover:text-[#7b6a58] transition">
             O nás
