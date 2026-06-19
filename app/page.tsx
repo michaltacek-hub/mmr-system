@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Services from "./components/services";
+import ContactSection from "./components/contact";
 import CTA from "./components/cta";
 import Footer from "./components/footer";
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
 <Navbar />
 <Hero />
 <Services />
-<Contact />
+<ContactSection />
 <CTA />
 <Footer />
 
