@@ -32,28 +32,28 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 border-l border-[#d8cec2] pl-4">
             <a
-              href="https://instagram.com/TVUJ_INSTAGRAM"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram
-                size={22}
-                className="text-pink-500 hover:scale-110 transition"
-              />
-            </a>
+  href="https://www.instagram.com/_masazemichelle/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+>
+  <FaInstagram
+    size={22}
+    className="text-pink-500 hover:scale-110 transition"
+  />
+</a>
 
-            <a
-              href="https://facebook.com/TVUJ_FACEBOOK"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebook
-                size={22}
-                className="text-blue-600 hover:scale-110 transition"
-              />
-            </a>
+<a
+  href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Facebook"
+>
+  <FaFacebook
+    size={22}
+    className="text-blue-600 hover:scale-110 transition"
+  />
+</a>
           </div>
 
           <a
