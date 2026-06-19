@@ -38,7 +38,7 @@ export default function Hero() {
 href="/reservation"
   className="bg-[#2f3e34] text-[#f5efe6] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
-Rezervovat termín
+Rezervovat online
 </Link>
 
           <button className="border border-[#2f3e34] px-8 py-4 rounded-full text-lg hover:bg-[#2f3e34] hover:text-white transition">
