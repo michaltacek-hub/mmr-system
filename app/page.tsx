@@ -9,6 +9,7 @@ export default function Home() {
 <Navbar />
 <Hero />
 <Services />
+<Contact />
 <CTA />
 <Footer />
 
