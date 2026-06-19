@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Facebook } from "lucide-react";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -13,7 +13,7 @@ export default function Navbar() {
           className="absolute left-2 top-2 h-32 md:left-20 md:top-4 md:h-60 w-auto z-50"
         />
 
-        <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-wider">
+        <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
           <a href="#o-michelle" className="hover:text-[#7b6a58] transition">
             O Michelle
           </a>
@@ -30,14 +30,14 @@ export default function Navbar() {
             Kontakt
           </a>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4 border-l border-[#d8cec2] pl-4">
             <a
               href="https://instagram.com/TVUJ_INSTAGRAM"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <Instagram
+              <FaInstagram
                 size={22}
                 className="text-pink-500 hover:scale-110 transition"
               />
@@ -49,7 +49,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <Facebook
+              <FaFacebook
                 size={22}
                 className="text-blue-600 hover:scale-110 transition"
               />
@@ -58,9 +58,9 @@ export default function Navbar() {
 
           <a
             href="/reservation"
-            className="rounded-full bg-[#7b6a58] px-5 py-2 text-white hover:opacity-90 transition"
+            className="rounded-full bg-[#7b6a58] px-6 py-3 text-white font-medium hover:opacity-90 transition"
           >
-            Rezervovat
+            Rezervovat online
           </a>
         </div>
       </div>
