@@ -1,3 +1,4 @@
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 export default function Contact() {
   return (
     <section id="kontakt" className="py-28 px-6">
@@ -15,7 +16,7 @@ export default function Contact() {
           <div className="space-y-6 text-lg">
 
             <p>
-              📞 <strong>735 958 842</strong>
+              📞 <strong>+420 735 958 842</strong>
             </p>
 
             <p>
@@ -23,24 +24,30 @@ export default function Contact() {
             </p>
 
             <div className="flex justify-center gap-6 pt-4">
-              <a
-                href="https://www.instagram.com/_masazemichelle/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition"
-              >
-                Instagram
-              </a>
+  <a
+    href="https://www.instagram.com/_masazemichelle/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram
+      size={32}
+      className="text-pink-500 hover:scale-110 transition"
+    />
+  </a>
 
-              <a
-                href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition"
-              >
-                Facebook
-              </a>
-            </div>
+  <a
+    href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebook
+      size={32}
+      className="text-blue-600 hover:scale-110 transition"
+    />
+  </a>
+</div>
 
           </div>
         </div>
