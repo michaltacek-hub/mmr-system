@@ -14,19 +14,19 @@ export default function Navbar() {
         />
 
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
-          <a href="#o-michelle" className="hover:text-[#7b6a58] transition">
+          <a href="#o-michelle" className="hover:text-[#6F8F63] transition">
             O Michelle
           </a>
 
-          <a href="#sluzby" className="hover:text-[#7b6a58] transition">
+          <a href="#sluzby" className="hover:text-[#6F8F63] transition">
             Služby
           </a>
 
-          <a href="#cenik" className="hover:text-[#7b6a58] transition">
+          <a href="#cenik" className="hover:text-[#6F8F63] transition">
             Ceník
           </a>
 
-          <a href="#kontakt" className="hover:text-[#7b6a58] transition">
+          <a href="#kontakt" className="hover:text-[#6F8F63] transition">
             Kontakt
           </a>
 

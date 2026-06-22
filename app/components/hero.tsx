@@ -28,24 +28,21 @@ export default function Hero() {
   className="text-white text-6xl md:text-8xl font-semibold leading-tight mb-8"
   style={{ textShadow: "0 2px 20px rgba(0,0,0,0.35)" }}
 >
-  Přojď si odpočinout <br /> ulevit tělu i mysli
+  Přijď si odpočinout <br /> ulevit tělu i mysli
 </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto text-white leading-relaxed mb-10">
-          Elegantní masáže v přírodním minimalistickém stylu.
-        </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
 
         <Link
   href="/reservation"
-  className="bg-[#2f3e34] text-white px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
+  className="bg-[#6F8F63] text-white px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
   Rezervovat online
 </Link>
 
 <a
   href="#sluzby"
-  className="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#2f3e34] transition"
+  className="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#6F8F63] transition"
 >
   Zobrazit služby
 </a>
