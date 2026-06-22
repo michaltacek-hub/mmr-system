@@ -2,7 +2,7 @@ export default function CTA() {
   return (
     <section id="kontakt" className="px-6 pb-28">
 
-      <div className="max-w-5xl mx-auto bg-[#65835c] text-[#f5efe6] rounded-[3rem] p-16 text-center">
+      <div className="max-w-5xl mx-auto bg-[#5F7F56] text-[#f5efe6] rounded-[3rem] p-16 text-center">
 
         <p className="uppercase tracking-[0.3em] text-sm mb-6 text-[#d7c9b8]">
           Rezervace
@@ -20,7 +20,7 @@ export default function CTA() {
 
      <a
   href="/reservation"
-  className="inline-block bg-[#f5efe6] text-[#65835c] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
+  className="inline-block bg-[#f5efe6] text-[#5F7F56] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
   Rezervovat online
 </a>
