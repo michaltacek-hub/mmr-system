@@ -24,26 +24,28 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl">
 
 
-        <h1 className="text-6xl md:text-8xl font-semibold leading-tight mb-8">
-          Péče o tělo <br /> i mysl
-        </h1>
-
+       <h1
+  className="text-white text-6xl md:text-8xl font-semibold leading-tight mb-8"
+  style={{ textShadow: "0 2px 20px rgba(0,0,0,0.35)" }}
+>
+  Přojď si odpočinout <br /> ulevit tělu i mysli
+</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-white leading-relaxed mb-10">
           Elegantní masáže v přírodním minimalistickém stylu.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
 
-         <Link
-href="/reservation"
-  className="bg-[#2f3e34] text-[#f5efe6] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
+        <Link
+  href="/reservation"
+  className="bg-[#2f3e34] text-white px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
-Rezervovat online
+  Rezervovat online
 </Link>
 
-         <a
+<a
   href="#sluzby"
-  className="border border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#2f3e34] transition"
+  className="bg-white/10 backdrop-blur-sm border border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#2f3e34] transition"
 >
   Zobrazit služby
 </a>
