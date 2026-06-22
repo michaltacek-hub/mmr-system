@@ -14,7 +14,7 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          <div className="bg-[#6F8F63] p-8 rounded-[2rem] hover:-translate-y-2 transition duration-300">
+          <div className="bg-[#efe6da] p-8 rounded-[2rem] hover:-translate-y-2 transition duration-300">
             <h3 className="text-2xl font-semibold mb-4 text-[#5F7F56]">
               Klasická masáž
             </h3>
@@ -23,7 +23,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="bg-[#6F8F63] p-8 rounded-[2rem] hover:-translate-y-2 transition duration-300">
+          <div className="bg-[#efe6da] p-8 rounded-[2rem] hover:-translate-y-2 transition duration-300">
             <h3 className="text-2xl font-semibold mb-4 text-[#5F7F56]">
               Relaxační masáž
             </h3>
@@ -69,7 +69,7 @@ export default function Services() {
           </div>
 
           <div className="bg-[#efe6da] p-8 rounded-[2rem] hover:-translate-y-2 transition duration-300">
-            <h3 className="text-2xl font-semibold mb-4">
+            <h3 className="text-2xl font-semibold mb-4 text-[#5F7F56]">
               Anticelulitidní zábal
             </h3>
             <p className="text-[#5f5246] leading-relaxed">
