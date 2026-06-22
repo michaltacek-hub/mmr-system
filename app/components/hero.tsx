@@ -41,10 +41,12 @@ href="/reservation"
 Rezervovat online
 </Link>
 
-          <button className="border border-[#2f3e34] px-8 py-4 rounded-full text-lg hover:bg-[#2f3e34] hover:text-white transition">
-            Zobrazit služby
-          </button>
-
+         <a
+  href="#sluzby"
+  className="border border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white hover:text-[#2f3e34] transition"
+>
+  Zobrazit služby
+</a>
         </div>
 
       </div>
