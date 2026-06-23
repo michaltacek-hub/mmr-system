@@ -90,6 +90,11 @@ style={{
           </a>
         </div>
       </div>
+      {isOpen && (
+  <div className="md:hidden bg-[#f5efe6] border-t border-[#d8cec2] px-6 py-6">
+    MENU TEST
+  </div>
+)}
     </nav>
   );
 }
