@@ -90,9 +90,67 @@ style={{
           </a>
         </div>
       </div>
-      {isOpen && (
-  <div className="md:hidden bg-[#f5efe6] border-t border-[#d8cec2] px-6 py-6">
-    MENU TEST
+{isOpen && (
+  <div className="md:hidden mt-24 bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8">
+    <div className="flex flex-col gap-6 uppercase tracking-wider text-lg">
+
+      <a
+        href="#o-michelle"
+        onClick={() => setIsOpen(false)}
+      >
+        O Michelle
+      </a>
+
+      <a
+        href="#sluzby"
+        onClick={() => setIsOpen(false)}
+      >
+        Služby
+      </a>
+
+      <a
+        href="#cenik"
+        onClick={() => setIsOpen(false)}
+      >
+        Ceník
+      </a>
+
+      <a
+        href="#kontakt"
+        onClick={() => setIsOpen(false)}
+      >
+        Kontakt
+      </a>
+
+      <div className="flex gap-5 pt-2">
+
+        <a
+          href="https://www.instagram.com/_masazemichelle/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+      </div>
+
+      <a
+        href="/reservation"
+        onClick={() => setIsOpen(false)}
+        className="mt-2 rounded-full bg-[#58794B] px-6 py-3 text-white text-center"
+      >
+        Rezervovat online
+      </a>
+
+    </div>
   </div>
 )}
     </nav>
