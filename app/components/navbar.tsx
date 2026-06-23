@@ -97,7 +97,7 @@ style={{
       onClick={() => setIsOpen(false)}
     />
 
-    <div className="fixed top-30 left-0 w-full bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8 z-50">
+    <div className="fixed top-33 left-0 w-full bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8 z-50">
     <div className="flex flex-col gap-6 uppercase tracking-wider text-lg">
       <a
         href="#o-michelle"
