@@ -30,7 +30,6 @@ style={{
     className="h-32 md:h-48 w-auto"
   />
 </motion.div>
-        <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
           <div className="md:hidden">
   <button
     onClick={() => setIsOpen(!isOpen)}
@@ -39,6 +38,8 @@ style={{
     {isOpen ? "✕" : "☰"}
   </button>
 </div>
+        <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+
           <a href="#o-michelle" className="hover:text-[#58794B] transition">
             O Michelle
           </a>
