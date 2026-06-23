@@ -91,9 +91,14 @@ style={{
         </div>
       </div>
 {isOpen && (
-  <div className="md:hidden mt-24 bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8">
-    <div className="flex flex-col gap-6 uppercase tracking-wider text-lg">
+  <>
+    <div
+      className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+      onClick={() => setIsOpen(false)}
+    />
 
+    <div className="fixed top-20 left-0 w-full bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8 z-50">
+    <div className="flex flex-col gap-6 uppercase tracking-wider text-lg">
       <a
         href="#o-michelle"
         onClick={() => setIsOpen(false)}
@@ -124,23 +129,31 @@ style={{
 
       <div className="flex gap-5 pt-2">
 
-        <a
-          href="https://www.instagram.com/_masazemichelle/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
+  <a
+    href="https://www.instagram.com/_masazemichelle/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram
+      size={24}
+      className="text-pink-500 hover:scale-110 transition"
+    />
+  </a>
 
-        <a
-          href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Facebook
-        </a>
+  <a
+    href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebook
+      size={24}
+      className="text-blue-600 hover:scale-110 transition"
+    />
+  </a>
 
-      </div>
+</div>
 
       <a
         href="/reservation"
@@ -150,8 +163,9 @@ style={{
         Rezervovat online
       </a>
 
+      </div>
     </div>
-  </div>
+  </>
 )}
     </nav>
   );
