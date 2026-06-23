@@ -1,19 +1,44 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Navbar() {
+  const { scrollY } = useScroll();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const logoScale = useTransform(scrollY, [0, 500], [1, 0.45]);
+  const logoY = useTransform(scrollY, [0, 500], [0, -11]);
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#f5efe6]">
       <div className="w-full flex items-center justify-end px-20 h-24">
-        <Image
-          src="/navbar2.png"
-          alt="Masáže Michelle"
-          width={2000}
-          height={2000}
-          className="absolute left-2 top-2 h-32 md:left-20 md:top-4 md:h-48 w-auto z-50"
-        />
-
+       <motion.div
+style={{
+  scale: logoScale,
+  y: logoY,
+}}
+  className="absolute left-2 top-2 md:left-20 md:top-4 z-50 origin-top-left"
+>
+  <Image
+    src="/navbar2.png"
+    alt="Masáže Michelle"
+    width={2000}
+    height={2000}
+    className="h-32 md:h-48 w-auto"
+  />
+</motion.div>
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+          <div className="md:hidden">
+  <button
+    onClick={() => setIsOpen(!isOpen)}
+    className="text-3xl text-[#58794B]"
+  >
+    {isOpen ? "✕" : "☰"}
+  </button>
+</div>
           <a href="#o-michelle" className="hover:text-[#58794B] transition">
             O Michelle
           </a>

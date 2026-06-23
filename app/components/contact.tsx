@@ -16,13 +16,15 @@ export default function Contact() {
           <div className="space-y-6 text-lg">
 
             <p>
+              📧 <strong>rezervace@masazemichelle.cz</strong>
+            </p>
+
+            
+            <p>
               📞 <strong>+420 735 958 842</strong>
             </p>
 
-            <p>
-              ✉️ <strong>rezervace@masazemichelle.cz</strong>
-            </p>
-
+            
             <div className="flex justify-center gap-6 pt-4">
   <a
     href="https://www.instagram.com/_masazemichelle/"

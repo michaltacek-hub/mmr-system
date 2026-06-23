@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Hero() {
   return (
-    <section className="relative h-screen pt-32 flex items-center justify-center text-center px-6">
+    <section
+  id="hero"
+  className="relative h-screen pt-32 flex items-center justify-center text-center px-6"
+>
 <div className="absolute inset-0">
 
   <Image
