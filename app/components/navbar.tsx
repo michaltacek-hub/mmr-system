@@ -14,19 +14,19 @@ export default function Navbar() {
         />
 
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
-          <a href="#o-michelle" className="hover:text-[#6F8F63] transition">
+          <a href="#o-michelle" className="hover:text-[#58794B] transition">
             O Michelle
           </a>
 
-          <a href="#sluzby" className="hover:text-[#6F8F63] transition">
+          <a href="#sluzby" className="hover:text-[#58794B] transition">
             Služby
           </a>
 
-          <a href="#cenik" className="hover:text-[#6F8F63] transition">
+          <a href="#cenik" className="hover:text-[#58794B] transition">
             Ceník
           </a>
 
-          <a href="#kontakt" className="hover:text-[#6F8F63] transition">
+          <a href="#kontakt" className="hover:text-[#58794B] transition">
             Kontakt
           </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
 
           <a
             href="/reservation"
-            className="rounded-full bg-[#7b6a58] px-6 py-3 text-white font-medium hover:opacity-90 transition"
+            className="rounded-full bg-[#58794B] px-6 py-3 text-white font-medium hover:opacity-90 transition"
           >
             Rezervovat online
           </a>

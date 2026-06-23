@@ -8,7 +8,7 @@ export default function Contact() {
           Kontakt
         </p>
 
-        <h2 className="text-5xl font-semibold mb-12">
+        <h2 className="text-5xl font-semibold mb-12 text-[#58794B]">
           Jsme tu pro vás
         </h2>
 

@@ -35,7 +35,7 @@ export default function Hero() {
 
         <Link
   href="/reservation"
-  className="bg-[#6F8F63] text-white px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
+  className="bg-[#58794B] text-white px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
   Rezervovat online
 </Link>
