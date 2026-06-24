@@ -66,7 +66,7 @@ export default function About() {
               s pocitem úlevy a nové energie.
             </p>
 
-            <p className="font-medium text-[#58794B]">
+            <p className="font-medium text-[#5f5246]">
               Těším se na Vaši návštěvu.
             </p>
 
