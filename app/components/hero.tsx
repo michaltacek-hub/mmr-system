@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
   id="hero"
- className="relative h-screen flex items-start justify-center text-center px-6 pt-12 md:pt-24"
+ className="relative h-screen flex items-start justify-center text-center px-6 pt-14 md:pt-32"
 >
 <div className="absolute inset-0">
 
