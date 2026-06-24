@@ -33,8 +33,8 @@ export default function Navbar() {
 </div>
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
 
-          <a href="#o-michelle" className="hover:text-[#58794B] transition">
-            O Michelle
+          <a href="#o-mne" className="hover:text-[#58794B] transition">
+            O mně
           </a>
 
           <a href="#sluzby" className="hover:text-[#58794B] transition">
@@ -93,10 +93,10 @@ export default function Navbar() {
     <div className="fixed top-36 left-0 w-full bg-[#f5efe6] border-t border-[#d8cec2] px-8 py-8 z-50">
     <div className="flex flex-col gap-6 uppercase tracking-wider text-lg">
       <a
-        href="#o-michelle"
+        href="#o-mne"
         onClick={() => setIsOpen(false)}
       >
-        O Michelle
+        O mně
       </a>
 
       <a
