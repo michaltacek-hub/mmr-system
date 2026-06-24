@@ -11,7 +11,7 @@ export default function About() {
           </p>
 
           <h2 className="text-5xl font-semibold text-[#58794B]">
-            Michaela Zemánková
+            Masáže s individuálním přístupem
           </h2>
         </div>
 
