@@ -3,25 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
-import { motion, useScroll, useTransform } from "framer-motion";
+
 
 export default function Navbar() {
-  const { scrollY } = useScroll();
   const [isOpen, setIsOpen] = useState(false);
 
-  const logoScale = useTransform(scrollY, [0, 500], [1, 0.45]);
-  const logoY = useTransform(scrollY, [0, 500], [0, -11]);
+
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#f5efe6]">
+   <nav className="w-full bg-[#f5efe6]">
       <div className="w-full flex items-center justify-end px-20 h-24">
-       <motion.div
-style={{
-  scale: logoScale,
-  y: logoY,
-}}
-  className="absolute left-2 top-2 md:left-20 md:top-4 z-50 origin-top-left"
->
+      <div className="absolute left-2 top-2 md:left-20 md:top-4 z-50">
+
   <Image
     src="/navbar2.png"
     alt="Masáže Michelle"
@@ -29,7 +22,7 @@ style={{
     height={2000}
     className="h-32 md:h-48 w-auto"
   />
-</motion.div>
+</div>
           <div className="md:hidden">
   <button
     onClick={() => setIsOpen(!isOpen)}
