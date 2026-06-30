@@ -7,9 +7,9 @@ export default function Pricing() {
           <p className="uppercase tracking-[0.3em] text-sm text-[#7b6a58] mb-4">
             Ceník
           </p>
-
+        </div>
           <h2 className="text-5xl font-semibold text-[#58794B]">
-            Přehled služeb a cen
+            Ceník služeb
           </h2>
         </div>
 
@@ -22,8 +22,16 @@ export default function Pricing() {
             </h3>
 
             <div className="space-y-4">
-              <PriceRow service="Klasická masáž (90 min)" price="1000 Kč" />
-              <PriceRow service="Relaxační masáž (60 min)" price="800 Kč" />
+              <PriceRow
+  service="Klasická masáž"
+  duration="90 minut"
+  price="1000 Kč"
+/>
+             <PriceRow
+  service="Relaxační masáž"
+  duration="60 minut"
+  price="800 Kč"
+/>
             </div>
           </div>
 
@@ -34,8 +42,16 @@ export default function Pricing() {
             </h3>
 
             <div className="space-y-4">
-              <PriceRow service="Kompletní relax" price="950 Kč" />
-              <PriceRow service="Základní uvolnění" price="700 Kč" />
+              <PriceRow
+  service="Kompletní relax"
+  duration="90 minut"
+  price="950 Kč"
+/>
+              <PriceRow
+  service="Základní uvolnění"
+  duration="60 minut"
+  price="700 Kč"
+/>
             </div>
           </div>
 
@@ -46,10 +62,35 @@ export default function Pricing() {
             </h3>
 
             <div className="space-y-4">
-              <PriceRow service="Maderoterapie" price="700 Kč" />
-              <PriceRow service="Maderoterapie + zábal" price="1000 Kč" />
-              <PriceRow service="Anticelulitidní zábal" price="450 Kč" />
-              <PriceRow service="5× Maderoterapie" price="3250 Kč" />
+              <PriceRow
+  service="Maderoterapie"
+  duration="60 min"
+  price="700 Kč"
+/>
+
+<PriceRow
+  service="Maderoterapie"
+  duration="90 min"
+  price="1000 Kč"
+/>
+
+<PriceRow
+  service="Maderoterapie + zábal"
+  duration="90 minut"
+  price="1000 Kč"
+/>
+
+<PriceRow
+  service="Anticelulitidní zábal"
+  duration="30 minut"
+  price="450 Kč"
+/>
+
+<PriceRow
+  service="5× Maderoterapie"
+  duration="Permanentka"
+  price="3250 Kč"
+/>
             </div>
           </div>
 
@@ -60,9 +101,17 @@ export default function Pricing() {
             </h3>
 
             <div className="space-y-4">
-              <PriceRow service="Masáž zad a šíje" price="550 Kč" />
-              <PriceRow service="Baňky k masáži" price="300 Kč" />
-            </div>
+             <PriceRow
+  service="Masáž zad a šíje"
+  duration="45 minut"
+  price="550 Kč"
+/>
+
+<PriceRow
+  service="Baňky k masáži"
+  duration="Dle domluvy"
+  price="300 Kč"
+/>
           </div>
 
         </div>
@@ -74,15 +123,22 @@ export default function Pricing() {
 
 type PriceRowProps = {
   service: string;
+  duration: string;
   price: string;
 };
 
-function PriceRow({ service, price }: PriceRowProps) {
+function PriceRow({ service, duration, price }: PriceRowProps) {
   return (
    <div className="flex justify-between items-center border-b border-[#ddd2c6] py-5">
-      <span className="text-lg text-[#5f5246]">
-        {service}
-      </span>
+     <div className="flex flex-col">
+  <span className="text-lg text-[#5f5246]">
+    {service}
+  </span>
+
+  <span className="text-sm text-[#8a7a69] mt-1">
+    {duration}
+  </span>
+</div>
 
       <span className="text-2xl font-bold text-[#58794B] whitespace-nowrap">
         {price}
