@@ -267,7 +267,7 @@ if (data) {
     <option value="60">60 minut</option>
   )}
 
-  {formData.service === "Základní uvolnění" && (
+  {formData.service === "Těhotenská masáž - základní uvolnění" && (
     <option value="45">45 minut</option>
   )}
 
