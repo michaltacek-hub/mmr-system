@@ -44,12 +44,12 @@ export default function Pricing() {
             <div className="space-y-4">
               <PriceRow
   service="Kompletní relax"
-  duration="90 minut"
+  duration="60 minut"
   price="950 Kč"
 />
               <PriceRow
   service="Základní uvolnění"
-  duration="60 minut"
+  duration="45 minut"
   price="700 Kč"
 />
             </div>
@@ -77,7 +77,7 @@ export default function Pricing() {
 <PriceRow
   service="Maderoterapie + zábal"
   duration="90 minut"
-  price="1000 Kč"
+  price="1200 Kč"
 />
 
 <PriceRow

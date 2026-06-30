@@ -227,16 +227,16 @@ if (data) {
     Maderoterapie
   </option>
 
-  <option value="Maderoterapie + zábal">
-    Maderoterapie + zábal
+  <option value="Maderoterapie a anticelulitidní zábal">
+    Maderoterapie a anticelulitidní zábal
   </option>
 
-  <option value="Zábal">
-    Zábal
+  <option value="Anticelulitidní zábal">
+    Anticelulitidní zábal
   </option>
 
-  <option value="Záda + šíje">
-    Záda + šíje
+  <option value="Masáž zad a šíje">
+    Masáž zad a šíje
   </option>
 </select>
 
@@ -278,15 +278,15 @@ if (data) {
     </>
   )}
 
-  {formData.service === "Maderoterapie + zábal" && (
+  {formData.service === "Maderoterapie a anticelulitidní zábal" && (
     <option value="90">90 minut</option>
   )}
 
-  {formData.service === "Zábal" && (
+  {formData.service === "Anticelulitidní zábal" && (
     <option value="30">30 minut</option>
   )}
 
-  {formData.service === "Záda + šíje" && (
+  {formData.service === "Masáž zad a šíje" && (
     <option value="45">45 minut</option>
   )}
 </select>
