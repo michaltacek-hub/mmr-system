@@ -1,14 +1,14 @@
 export default function Pricing() {
   return (
     <section id="cenik" className="py-28 px-6 bg-[#efe6da]">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto lg:max-w-4xl">
 
         <div className="text-center mb-16">
           <p className="uppercase tracking-[0.3em] text-sm text-[#7b6a58] mb-4">
             Ceník
           </p>
         </div>
-          <h2 className="text-5xl font-semibold text-[#58794B]">
+          <h2 className="text-5xl font-semibold text-[#58794B] text-center">
             Ceník služeb
           </h2>
         </div>
