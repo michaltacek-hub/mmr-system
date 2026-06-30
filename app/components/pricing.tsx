@@ -75,7 +75,7 @@ export default function Pricing() {
 />
 
 <PriceRow
-  service="Maderoterapie + zábal"
+  service="Maderoterapie a anticelulitidní zábal"
   duration="90 minut"
   price="1200 Kč"
 />
