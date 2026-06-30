@@ -13,10 +13,10 @@ export default function Pricing() {
           </h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="grid gap-8">
 
           {/* Klasické masáže */}
-          <div>
+          <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
               Klasické masáže
             </h3>
@@ -28,7 +28,7 @@ export default function Pricing() {
           </div>
 
           {/* Těhotenské masáže */}
-          <div>
+          <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
               Těhotenské masáže
             </h3>
@@ -40,7 +40,7 @@ export default function Pricing() {
           </div>
 
           {/* Maderoterapie */}
-          <div>
+          <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
               Maderoterapie
             </h3>
@@ -54,7 +54,7 @@ export default function Pricing() {
           </div>
 
           {/* Doplňkové procedury */}
-          <div>
+          <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
               Doplňkové procedury
             </h3>
@@ -79,12 +79,12 @@ type PriceRowProps = {
 
 function PriceRow({ service, price }: PriceRowProps) {
   return (
-    <div className="flex justify-between items-center border-b border-[#d8cec2] pb-3">
+   <div className="flex justify-between items-center border-b border-[#ddd2c6] py-5">
       <span className="text-lg text-[#5f5246]">
         {service}
       </span>
 
-      <span className="font-semibold text-[#58794B] text-lg">
+      <span className="text-2xl font-bold text-[#58794B] whitespace-nowrap">
         {price}
       </span>
     </div>
