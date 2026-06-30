@@ -219,8 +219,8 @@ if (data) {
     Těhotenská masáž - kompletní relax
   </option>
 
-  <option value="Základní uvolnění">
-    Základní uvolnění
+  <option value="Těhotenská masáž - základní uvolnění">
+    Těhotenská masáž - základní uvolnění
   </option>
 
   <option value="Maderoterapie">
