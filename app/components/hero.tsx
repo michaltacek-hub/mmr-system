@@ -34,8 +34,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#a1866f]/20 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full w-full max-w-4xl flex-col items-center justify-center pt-20 md:pt-16">
-
+      <div className="relative z-10 flex h-full w-full max-w-4xl flex-col items-center justify-center -translate-y-10 md:translate-y-0">
 
        <h1
   className="text-white text-6xl md:text-8xl font-semibold leading-tight mb-8"
