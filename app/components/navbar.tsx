@@ -1,16 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 120);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
 
   return (
-   <nav className="w-full bg-[#f5efe6]">
+   <nav
+  className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+    isScrolled
+      ? "bg-[#f5efe6]/95 backdrop-blur-md shadow-md"
+      : "bg-[#f5efe6]"
+  }`}
+>
    <div className="w-full flex items-center justify-end px-5 md:px-20 h-24">
   
           <div className="md:hidden">
