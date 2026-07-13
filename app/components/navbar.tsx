@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 
@@ -13,16 +12,7 @@ export default function Navbar() {
   return (
    <nav className="w-full bg-[#f5efe6]">
    <div className="w-full flex items-center justify-end px-5 md:px-20 h-24">
-      <div className="absolute left-2 top-2 md:left-20 md:top-4 z-50">
-
-  <Image
-    src="/navbar2.png"
-    alt="Masáže Michelle"
-    width={2000}
-    height={2000}
-    className="h-32 md:h-48 w-auto"
-  />
-</div>
+  
           <div className="md:hidden">
   <button
     onClick={() => setIsOpen(!isOpen)}

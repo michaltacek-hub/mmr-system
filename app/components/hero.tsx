@@ -17,6 +17,16 @@ export default function Hero() {
   />
 
   <div className="absolute inset-0 bg-black/30" />
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+  <Image
+    src="/navbar2.png"
+    alt="Masáže Michelle"
+    width={420}
+    height={420}
+    priority
+    className="w-48 md:w-72 h-auto"
+  />
+</div>
 
 </div>
       {/* Decorative blur */}
@@ -24,7 +34,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#a1866f]/20 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-10 max-w-4xl pt-36 md:pt-52">
 
 
        <h1
