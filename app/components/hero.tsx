@@ -17,14 +17,14 @@ export default function Hero() {
   />
 
   <div className="absolute inset-0 bg-black/30" />
-<div className="absolute -top-16 left-4 md:left-16 z-20">
+<div className="absolute top-24 left-5 md:top-24 md:left-20 z-20">
   <Image
     src="/navbar2.png"
     alt="Masáže Michelle"
     width={360}
     height={360}
     priority
-    className="w-36 md:w-56 h-auto"
+    className="w-28 md:w-40 h-auto"
   />
 </div>
 

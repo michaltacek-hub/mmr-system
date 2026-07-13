@@ -28,7 +28,7 @@ useEffect(() => {
       : "bg-[#f5efe6]"
   }`}
 >
-   <div className="w-full flex items-center justify-end px-5 md:px-20 h-24">
+   <div className="w-full flex items-center justify-end px-5 md:px-20 h-20">
     {isScrolled && (
   <div className="absolute left-4 md:left-20">
     <Image
