@@ -27,9 +27,62 @@ useEffect(() => {
       : "bg-[#f5efe6]"
   }`}
 >
-   <div className="w-full flex items-center justify-end px-5 md:px-20 h-18">
-   
-          <div className="md:hidden">
+   <div className="w-full flex items-center justify-between px-5 md:px-20 h-20">
+
+  {/* Mobilní sociální sítě */}
+  <div className="flex items-center gap-4 md:hidden">
+    <a
+      href="https://www.instagram.com/_masazemichelle/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <FaInstagram
+        size={22}
+        className="text-pink-500 hover:scale-110 transition"
+      />
+    </a>
+
+    <a
+      href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+    >
+      <FaFacebook
+        size={22}
+        className="text-blue-600 hover:scale-110 transition"
+      />
+    </a>
+  </div>
+
+  {/* Mobilní menu */}
+  <div className="md:hidden flex items-center gap-4">
+
+  <a
+    href="https://www.instagram.com/_masazemichelle/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram
+      size={22}
+      className="text-pink-500 hover:scale-110 transition"
+    />
+  </a>
+
+  <a
+    href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebook
+      size={22}
+      className="text-blue-600 hover:scale-110 transition"
+    />
+  </a>
+
   <button
     onClick={() => setIsOpen(!isOpen)}
     className="flex items-center gap-2 text-[#58794B] font-medium"
@@ -47,6 +100,7 @@ useEffect(() => {
       </>
     )}
   </button>
+
 </div>
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
 
@@ -147,34 +201,6 @@ useEffect(() => {
       >
         Kontakt
       </a>
-
-      <div className="flex gap-5 pt-2">
-
-  <a
-    href="https://www.instagram.com/_masazemichelle/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-  >
-    <FaInstagram
-      size={24}
-      className="text-pink-500 hover:scale-110 transition"
-    />
-  </a>
-
-  <a
-    href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-  >
-    <FaFacebook
-      size={24}
-      className="text-blue-600 hover:scale-110 transition"
-    />
-  </a>
-
-</div>
 
       <a
         href="/reservation"

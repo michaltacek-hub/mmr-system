@@ -17,14 +17,14 @@ export default function Hero() {
   />
 
   <div className="absolute inset-0 bg-black/30" />
-<div className="absolute top-24 left-5 md:top-24 md:left-20 z-20">
+<div className="absolute top-20 left-3 md:top-24 md:left-20 z-20">
   <Image
     src="/navbar2.png"
     alt="Masáže Michelle"
     width={360}
     height={360}
     priority
-    className="w-28 md:w-40 h-auto"
+    className="w-24 md:w-40 h-auto"
   />
 </div>
 
@@ -34,8 +34,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#a1866f]/20 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full w-full max-w-4xl flex-col items-center justify-center -translate-y-10 md:translate-y-0">
-
+     <div className="relative z-10 flex h-full w-full max-w-4xl flex-col items-center justify-center -translate-y-10 translate-x-5 md:translate-x-0 md:translate-y-0">
        <h1
   className="text-white text-6xl md:text-8xl font-semibold leading-tight mb-8"
   style={{ textShadow: "0 2px 20px rgba(0,0,0,0.35)" }}
