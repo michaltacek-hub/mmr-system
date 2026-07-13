@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
   id="hero"
- className="relative h-screen flex items-start justify-center text-center px-6 pt-16 md:pt-34"
+  className="relative flex min-h-screen items-center justify-center px-6 text-center"
 >
 <div className="absolute inset-0">
 
@@ -17,7 +17,7 @@ export default function Hero() {
   />
 
   <div className="absolute inset-0 bg-black/30" />
-<div className="absolute -top-8 left-4 md:left-16 z-20">
+<div className="absolute -top-16 left-4 md:left-16 z-20">
   <Image
     src="/navbar2.png"
     alt="Masáže Michelle"
@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#a1866f]/20 rounded-full blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl pt-36 md:pt-52">
+      <div className="relative z-10 flex h-full w-full max-w-4xl flex-col items-center justify-center pt-20 md:pt-16">
 
 
        <h1
