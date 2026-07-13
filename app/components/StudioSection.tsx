@@ -24,7 +24,7 @@ export default function StudioSection() {
   </p>
 
   <h2 className="text-3xl font-bold text-[#58794B] md:text-4xl">
-    Klid. Pohoda. Relaxace.
+    Klid, pohoda a relax.
   </h2>
 </div>
 
