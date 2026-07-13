@@ -18,19 +18,15 @@ export default function StudioSection() {
     >
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-[#7b6a58]">
-            Studio
-          </p>
+       <div className="mx-auto mb-12 max-w-3xl text-center">
+  <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-[#7b6a58]">
+    Studio
+  </p>
 
-          <h2 className="text-4xl font-bold text-[#58794B] md:text-5xl">
-            Příjemné prostředí,
-            <br />
-            klidná atmosféra
-            <br />
-            a maximální soukromí
-          </h2>
-        </div>
+  <h2 className="text-3xl font-bold text-[#58794B] md:text-4xl">
+    Klid. Pohoda. Relaxace.
+  </h2>
+</div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {images.map((src) => (

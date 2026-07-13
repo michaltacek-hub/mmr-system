@@ -26,9 +26,20 @@ export default function Navbar() {
           <div className="md:hidden">
   <button
     onClick={() => setIsOpen(!isOpen)}
-    className="text-3xl text-[#58794B]"
+    className="flex items-center gap-2 text-[#58794B] font-medium"
+    aria-label={isOpen ? "Zavřít menu" : "Otevřít menu"}
   >
-    {isOpen ? "✕" : "☰"}
+    {isOpen ? (
+      <>
+        <span className="text-base uppercase tracking-wider">Zavřít</span>
+        <span className="text-3xl leading-none">✕</span>
+      </>
+    ) : (
+      <>
+        <span className="text-base uppercase tracking-wider">Menu</span>
+        <span className="text-3xl leading-none">☰</span>
+      </>
+    )}
   </button>
 </div>
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
@@ -39,6 +50,10 @@ export default function Navbar() {
 
           <a href="#sluzby" className="hover:text-[#58794B] transition">
             Služby
+          </a>
+          
+          <a href="#studio" className="hover:text-[#58794B] transition">
+            Studio
           </a>
 
           <a href="#cenik" className="hover:text-[#58794B] transition">
@@ -104,6 +119,13 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
       >
         Služby
+      </a>
+
+      <a
+        href="#studio"
+        onClick={() => setIsOpen(false)}
+      >
+        Studio
       </a>
 
       <a

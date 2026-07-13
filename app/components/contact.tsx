@@ -15,17 +15,21 @@ export default function Contact() {
         <div className="bg-[#efe6da] p-12 rounded-[2rem]">
           <div className="space-y-6 text-lg">
 
-            <p>
-              📧 <strong>rezervace@masazemichelle.cz</strong>
-            </p>
+  <div className="flex items-center justify-center gap-3">
+    <span className="text-2xl">📧</span>
+    <strong className="break-all text-center">
+      rezervace@masazemichelle.cz
+    </strong>
+  </div>
 
-            
-            <p>
-              📞 <strong>+420 735 958 842</strong>
-            </p>
+  <div className="flex items-center justify-center gap-3">
+    <span className="text-2xl">📞</span>
+    <strong>
+      +420 735 958 842
+    </strong>
+  </div>
 
-            
-            <div className="flex justify-center gap-6 pt-4">
+  <div className="flex justify-center gap-6 pt-4">
   <a
     href="https://www.instagram.com/_masazemichelle/"
     target="_blank"
