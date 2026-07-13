@@ -1,21 +1,12 @@
 import Image from "next/image";
 
 const images = [
-  "/studio/studio1.jpeg",
-  "/studio/studio2.jpeg",
-  "/studio/studio3.jpeg",
-  "/studio/studio4.jpeg",
-  "/studio/studio5.jpeg",
-  "/studio/studio6.jpeg",
-  "/studio/studio7.jpeg",
   "/studio/studio8.jpeg",
   "/studio/studio9.jpeg",
   "/studio/studio10.jpeg",
   "/studio/studio11.jpeg",
+  "/studio/studio7.jpeg",
   "/studio/studio12.jpeg",
-  "/studio/studio13.jpeg",
-  "/studio/studio14.jpeg",
-  "/studio/studio15.jpeg",
   "/studio/studio16.jpeg",
 ];
 
@@ -25,16 +16,16 @@ export default function StudioSection() {
       id="studio"
       className="bg-[#f5efe6] py-20"
     >
+          <p className="mt-4 text-[#7b6a58]">
+            Příjemné prostředí, klidná atmosféra a maximální soukromí pro váš odpočinek.
+          </p>
+
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 text-center">
           <h2 className="text-5xl font-bold text-[#58794B] md:text-5xl">
             Prostředí studia
           </h2>
-
-          <p className="mt-4 text-[#7b6a58]">
-            Příjemné prostředí, klidná atmosféra a maximální soukromí pro váš odpočinek.
-          </p>
-        </div>
+     </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {images.map((src) => (

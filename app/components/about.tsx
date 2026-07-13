@@ -19,18 +19,15 @@ export default function About() {
 
           <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden bg-[#efe6da]">
 
-       <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden bg-[#efe6da] flex items-center justify-center">
-
-  <div className="text-center px-6">
-    <p className="text-[#58794B] text-lg font-medium mb-2">
-      Fotografie bude doplněna
-    </p>
-
-    <p className="text-[#7b6a58] text-sm">
-      Michaela Zemánková při masáži
-    </p>
-  </div>
-
+ <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#efe6da]">
+  <Image
+    src="/images/studio6.jpg"
+    alt="Michaela Zemánková při masáži"
+    fill
+    priority
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    className="object-cover"
+  />
 </div>
 
           </div>
