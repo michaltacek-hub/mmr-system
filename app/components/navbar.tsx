@@ -27,7 +27,7 @@ useEffect(() => {
       : "bg-[#f5efe6]"
   }`}
 >
-   <div className="w-full flex items-center justify-end px-5 md:px-20 h-20">
+   <div className="w-full flex items-center justify-end px-5 md:px-20 h-16">
 
   {/* Mobilní menu */}
   <div className="md:hidden ml-auto flex items-center gap-4">
