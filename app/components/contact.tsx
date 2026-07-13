@@ -22,12 +22,13 @@ export default function Contact() {
 </strong>
   </div>
 
-  <div className="flex items-center justify-center gap-3">
-    <span className="text-2xl">📞</span>
-    <strong>
-      +420 735 958 842
-    </strong>
-  </div>
+  <div className="flex items-center justify-center gap-2">
+  <span className="text-xl shrink-0">📞</span>
+
+  <strong className="text-sm md:text-lg whitespace-nowrap">
+    +420 735 958 842
+  </strong>
+</div>
 
   <div className="flex justify-center gap-6 pt-4">
   <a
