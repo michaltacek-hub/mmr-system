@@ -12,21 +12,26 @@ const images = [
 
 export default function StudioSection() {
   return (
-   <section
-  id="studio"
-  className="bg-[#f5efe6] py-20"
->
-  <div className="mx-auto max-w-7xl px-6">
+    <section
+      id="studio"
+      className="bg-[#f5efe6] py-20"
+    >
+      <div className="mx-auto max-w-7xl px-6">
 
-    <p className="mb-4 text-center text-[#7b6a58]">
-      Klidná atmosféra a maximální soukromí
-    </p>
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-[#7b6a58]">
+            Studio
+          </p>
 
-    <div className="mb-10 text-center">
-      <h2 className="text-5xl font-bold text-[#58794B]">
-        Prostředí studia
-      </h2>
-    </div>
+          <h2 className="text-4xl font-bold text-[#58794B] md:text-5xl">
+            Příjemné prostředí,
+            <br />
+            klidná atmosféra
+            <br />
+            a maximální soukromí
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {images.map((src) => (
             <div
