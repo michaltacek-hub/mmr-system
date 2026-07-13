@@ -15,11 +15,11 @@ export default function Contact() {
         <div className="bg-[#efe6da] p-12 rounded-[2rem]">
           <div className="space-y-6 text-lg">
 
-  <div className="flex items-center justify-center gap-3">
-    <span className="text-2xl">📧</span>
-    <strong className="break-all text-center">
-      rezervace@masazemichelle.cz
-    </strong>
+  <div className="flex items-center justify-center gap-2">
+<span className="text-xl shrink-0">📧</span>
+<strong className="text-sm md:text-lg whitespace-nowrap">
+  rezervace@masazemichelle.cz
+</strong>
   </div>
 
   <div className="flex items-center justify-center gap-3">

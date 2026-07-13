@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
    <nav className="w-full bg-[#f5efe6]">
-      <div className="w-full flex items-center justify-end px-20 h-24">
+   <div className="w-full flex items-center justify-end px-5 md:px-20 h-24">
       <div className="absolute left-2 top-2 md:left-20 md:top-4 z-50">
 
   <Image
