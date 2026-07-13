@@ -19,7 +19,7 @@ export default function StudioSection() {
   <div className="mx-auto max-w-7xl px-6">
 
     <p className="mb-4 text-center text-[#7b6a58]">
-      Příjemné prostředí, klidná atmosféra a maximální soukromí pro váš odpočinek.
+      Klidná atmosféra a maximální soukromí
     </p>
 
     <div className="mb-10 text-center">

@@ -21,7 +21,7 @@ export default function About() {
 
  <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#efe6da]">
   <Image
-    src="/images/studio6.jpg"
+    src="/studio/studio6.jpg"
     alt="Michaela Zemánková při masáži"
     fill
     priority
