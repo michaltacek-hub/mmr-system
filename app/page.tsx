@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import About from "./components/about";
 import Services from "./components/services";
+import StudioSection from "./components/StudioSection";
 import Pricing from "./components/pricing";
 import ContactSection from "./components/contact";
 import CTA from "./components/cta";
@@ -13,6 +14,7 @@ export default function Home() {
 <Hero />
 <About />
 <Services />
+<StudioSection />
 <Pricing />
 <ContactSection />
 <CTA />
