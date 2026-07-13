@@ -27,37 +27,10 @@ useEffect(() => {
       : "bg-[#f5efe6]"
   }`}
 >
-   <div className="w-full flex items-center justify-between px-5 md:px-20 h-20">
-
-  {/* Mobilní sociální sítě */}
-  <div className="flex items-center gap-4 md:hidden">
-    <a
-      href="https://www.instagram.com/_masazemichelle/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      <FaInstagram
-        size={22}
-        className="text-pink-500 hover:scale-110 transition"
-      />
-    </a>
-
-    <a
-      href="https://www.facebook.com/p/Mas%C3%A1%C5%BEe-Michelle-61577443034560/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Facebook"
-    >
-      <FaFacebook
-        size={22}
-        className="text-blue-600 hover:scale-110 transition"
-      />
-    </a>
-  </div>
+   <div className="w-full flex items-center justify-end px-5 md:px-20 h-20">
 
   {/* Mobilní menu */}
-  <div className="md:hidden flex items-center gap-4">
+  <div className="md:hidden ml-auto flex items-center gap-4">
 
   <a
     href="https://www.instagram.com/_masazemichelle/"
