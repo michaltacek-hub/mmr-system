@@ -27,11 +27,11 @@ export default function StudioSection() {
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-[#2f3e34] md:text-4xl">
+          <h2 className="text-5xl font-bold text-[#58794B] md:text-5xl">
             Prostředí studia
           </h2>
 
-          <p className="mt-4 text-[#5b665f]">
+          <p className="mt-4 text-[#7b6a58]">
             Příjemné prostředí, klidná atmosféra a maximální soukromí pro váš odpočinek.
           </p>
         </div>
