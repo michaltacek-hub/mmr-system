@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
@@ -28,19 +27,8 @@ useEffect(() => {
       : "bg-[#f5efe6]"
   }`}
 >
-   <div className="w-full flex items-center justify-end px-5 md:px-20 h-20">
-    {isScrolled && (
-  <div className="absolute left-4 md:left-20">
-    <Image
-      src="/navbar2.png"
-      alt="Masáže Michelle"
-      width={120}
-      height={120}
-      className="w-16 md:w-20 h-auto"
-    />
-  </div>
-)}
-  
+   <div className="w-full flex items-center justify-end px-5 md:px-20 h-18">
+   
           <div className="md:hidden">
   <button
     onClick={() => setIsOpen(!isOpen)}
