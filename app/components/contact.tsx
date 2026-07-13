@@ -9,7 +9,7 @@ export default function Contact() {
         </p>
 
         <h2 className="text-5xl font-semibold mb-12 text-[#58794B]">
-          Jsem tu pro 
+          Jsem tu pro vás
         </h2>
 
         <div className="bg-[#efe6da] p-12 rounded-[2rem]">
