@@ -13,28 +13,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Masáže Michelle | Profesionální masáže v Lanškrouně",
+  title: "Masáže Michelle | Lanškroun",
 
   description:
-    "Profesionální relaxační, sportovní, těhotenské masáže a maderoterapie v Lanškrouně. Rezervujte si svůj termín jednoduše online.",
+    "Relaxační, lymfatické, těhotenské masáže a maderoterapie. Rezervujte si svůj termín jednoduše online.",
   
-    openGraph: {
-    title: "Masáže Michelle | Profesionální masáže v Lanškrouně",
-    description:
-      "Profesionální relaxační, sportovní, těhotenské masáže a maderoterapie v Lanškrouně. Rezervujte si svůj termín jednoduše online.",
-    url: "https://www.masazemichelle.cz",
-    siteName: "Masáže Michelle",
-    locale: "cs_CZ",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Masáže Michelle",
-      },
-    ],
-  },
+openGraph: {
+  title: "Masáže Michelle | Lanškroun",
+
+  description:
+    "Relaxační, lymfatické, těhotenské masáže a maderoterapie. Rezervujte si svůj termín jednoduše online.",
+
+  url: "https://www.masazemichelle.cz",
+
+  siteName: "Masáže Michelle",
+
+  locale: "cs_CZ",
+
+  type: "website",
+
+  images: [
+    {
+      url: "https://www.masazemichelle.cz/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Masáže Michelle",
+      type: "image/jpeg",
+    },
+  ],
+},
+twitter: {
+  card: "summary_large_image",
+  title: "Masáže Michelle | Lanškroun",
+  description:
+    "Relaxační, lymfatické, těhotenské masáže a maderoterapie. Rezervujte si svůj termín jednoduše online.",
+  images: ["https://www.masazemichelle.cz/og-image.jpg"],
+},
   };
 
 
