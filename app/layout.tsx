@@ -17,7 +17,26 @@ export const metadata: Metadata = {
 
   description:
     "Profesionální relaxační, sportovní, těhotenské masáže a maderoterapie v Lanškrouně. Rezervujte si svůj termín jednoduše online.",
-};
+  
+    openGraph: {
+    title: "Masáže Michelle | Profesionální masáže v Lanškrouně",
+    description:
+      "Profesionální relaxační, sportovní, těhotenské masáže a maderoterapie v Lanškrouně. Rezervujte si svůj termín jednoduše online.",
+    url: "https://www.masazemichelle.cz",
+    siteName: "Masáže Michelle",
+    locale: "cs_CZ",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Masáže Michelle",
+      },
+    ],
+  },
+  };
+
 
 export default function RootLayout({
   children,
