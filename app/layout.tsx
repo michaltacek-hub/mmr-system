@@ -12,9 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Masáže Michelle Lanškroun",
-  description: "Relaxační, těhotenské masáže a maderoterapie v Lanškrouně",
+export const metadata: Metadata = {
+  title: "Masáže Michelle | Profesionální masáže v Lanškrouně",
+
+  description:
+    "Profesionální relaxační, sportovní, těhotenské masáže a maderoterapie v Lanškrouně. Rezervujte si svůj termín jednoduše online.",
 };
 
 export default function RootLayout({
@@ -24,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="cs"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
