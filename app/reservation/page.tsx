@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+const TEST_MODE = true;
+const ACCESS_CODE = "MICHELLE2026";
 export default function BookingPage() {
 const [formData, setFormData] = useState({
   name: "",
@@ -13,6 +15,8 @@ const [formData, setFormData] = useState({
 reservation_time: "",
   note: "",
 });
+const [accessCode, setAccessCode] = useState("");
+const [authorized, setAuthorized] = useState(false);
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 const { data: existingreservations, error: checkError } =
@@ -67,6 +71,14 @@ reservation_time: "",
 });
   }
 };
+const checkAccess = () => {
+  if (accessCode === ACCESS_CODE) {
+    sessionStorage.setItem("booking-access", ACCESS_CODE);
+    setAuthorized(true);
+  } else {
+    alert("Neplatný přístupový kód.");
+  }
+};
 const [bookedTimes, setBookedTimes] = useState<string[]>([]);
 const availableTimes = [];
 
@@ -79,6 +91,16 @@ for (let hour = 8; hour <= 20; hour++) {
     availableTimes.push(`${hour.toString().padStart(2, "0")}:45`);
   }
 }
+useEffect(() => {
+  if (!TEST_MODE) {
+    setAuthorized(true);
+    return;
+  }
+
+  if (sessionStorage.getItem("booking-access") === ACCESS_CODE) {
+    setAuthorized(true);
+  }
+}, []);
 useEffect(() => {
   const fetchBookedTimes = async () => {
     if (!formData.reservation_date) return;
