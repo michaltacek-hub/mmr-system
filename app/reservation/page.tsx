@@ -161,7 +161,7 @@ if (TEST_MODE && !authorized) {
     <main className="min-h-screen flex items-center justify-center bg-[#f5efe6] px-6">
       <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-lg">
 
-        <h1 className="text-3xl font-semibold mb-4">
+        <h1 className="text-3xl font-semibold mb-4 text-[#58794B]">
           Testovací provoz
         </h1>
 
@@ -175,7 +175,7 @@ if (TEST_MODE && !authorized) {
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value)}
           placeholder="Přístupový kód"
-          className="w-full p-4 rounded-2xl border border-[#d8cfc2]"
+          className="w-full p-4 rounded-2xl border border-[#58794B] "
         />
 
         <button
