@@ -175,7 +175,7 @@ if (TEST_MODE && !authorized) {
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value)}
           placeholder="Přístupový kód"
-          className="w-full p-4 rounded-2xl border border-[#58794B] "
+          className="w-full p-4 rounded-2xl border border-[#58794B] text-[#58794B] "
         />
 
         <button
