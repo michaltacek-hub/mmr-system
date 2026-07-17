@@ -180,7 +180,7 @@ if (TEST_MODE && !authorized) {
 
         <button
           onClick={checkAccess}
-          className="mt-6 w-full bg-[#2f3e34] text-[#f5efe6] py-4 rounded-full"
+          className="mt-6 w-full bg-[#58794B] text-[#f5efe6] py-4 rounded-full"
         >
           Pokračovat
         </button>
