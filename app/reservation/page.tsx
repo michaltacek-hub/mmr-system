@@ -156,6 +156,39 @@ if (data) {
   fetchBookedTimes();
 
 }, [formData.reservation_date]);
+if (TEST_MODE && !authorized) {
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-[#f5efe6] px-6">
+      <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-lg">
+
+        <h1 className="text-3xl font-semibold mb-4">
+          Testovací provoz
+        </h1>
+
+        <p className="text-[#7b6a58] mb-6">
+          Online rezervační systém je momentálně dostupný pouze pro vybrané testovací klienty.
+          Pokud jste od nás obdrželi přístupový kód, zadejte jej níže.
+        </p>
+
+        <input
+          type="password"
+          value={accessCode}
+          onChange={(e) => setAccessCode(e.target.value)}
+          placeholder="Přístupový kód"
+          className="w-full p-4 rounded-2xl border border-[#d8cfc2]"
+        />
+
+        <button
+          onClick={checkAccess}
+          className="mt-6 w-full bg-[#2f3e34] text-[#f5efe6] py-4 rounded-full"
+        >
+          Pokračovat
+        </button>
+
+      </div>
+    </main>
+  );
+}
   return (
   
     <main className="min-h-screen bg-[#f5efe6] text-[#2f3e34] px-6 py-20">
