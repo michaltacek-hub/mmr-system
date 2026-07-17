@@ -156,6 +156,7 @@ if (data) {
   fetchBookedTimes();
 
 }, [formData.reservation_date]);
+
 if (TEST_MODE && !authorized) {
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#f5efe6] px-6">
@@ -175,14 +176,14 @@ if (TEST_MODE && !authorized) {
           e.preventDefault();
           checkAccess();
         }}
-        ></form>
+        >
 
         <input
           type="password"
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value)}
           placeholder="Přístupový kód"
-          className="w-full p-4 rounded-2xl border border-black text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#58794B]"
+          className="w-full p-4 rounded-2xl border-2 border-[#4a4a4a] text-[#7b6a58] placeholder:text-[#7b6a58] focus:outline-none focus:border-[#58794B] focus:ring-1 focus:ring-[#58794B] transition"
         />
 
          <button
@@ -191,6 +192,7 @@ if (TEST_MODE && !authorized) {
         >
           Pokračovat
         </button>
+        </form>
 
       </div>
     </main>
