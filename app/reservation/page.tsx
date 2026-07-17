@@ -170,16 +170,23 @@ if (TEST_MODE && !authorized) {
           Pokud jste od nás obdrželi přístupový kód, zadejte jej níže.
         </p>
 
+  <form
+          onSubmit={(e) => {
+          e.preventDefault();
+          checkAccess();
+        }}
+        ></form>
+
         <input
           type="password"
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value)}
           placeholder="Přístupový kód"
-          className="w-full p-4 rounded-2xl border border-[#58794B] text-[#58794B] "
+          className="w-full p-4 rounded-2xl border border-black text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-[#58794B]"
         />
 
-        <button
-          onClick={checkAccess}
+         <button
+          type="submit"
           className="mt-6 w-full bg-[#58794B] text-[#f5efe6] py-4 rounded-full"
         >
           Pokračovat
