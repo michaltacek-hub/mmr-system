@@ -75,7 +75,7 @@ export default function Pricing() {
 />
               <PriceRow
   service="5x Lymfatická masáž"
-  duration="Dle domluvy"
+  duration="Permanentka"
   price="4990 Kč"
 />
             </div>
