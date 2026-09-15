@@ -15,10 +15,10 @@ export default function Pricing() {
 
     <div className="grid gap-8">
 
-          {/* Klasické masáže */}
+          {/* Celotělové masáže */}
           <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
-              Klasické masáže
+              Celotělové masáže
             </h3>
 
             <div className="space-y-4">
@@ -27,7 +27,12 @@ export default function Pricing() {
   duration="90 minut"
   price="1000 Kč"
 />
-             <PriceRow
+            <PriceRow
+  service="Klasická masáž"
+  duration="120 minut"
+  price="1200 Kč"
+/>
+            <PriceRow
   service="Relaxační masáž"
   duration="60 minut"
   price="800 Kč"
@@ -54,6 +59,27 @@ export default function Pricing() {
 />
             </div>
           </div>
+      
+
+          {/* Lymfatické masáže */}
+          <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
+            <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
+              Lymfatické masáže
+            </h3>
+
+            <div className="space-y-4">
+              <PriceRow
+  service="Lymfatická masáž"
+  duration="60 minut"
+  price="800 Kč"
+/>
+              <PriceRow
+  service="5x Lymfatická masáž"
+  duration="Dle domluvy"
+  price="4990 Kč"
+/>
+            </div>
+          </div>
 
           {/* Maderoterapie */}
           <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
@@ -63,13 +89,13 @@ export default function Pricing() {
 
             <div className="space-y-4">
               <PriceRow
-  service="Maderoterapie"
+  service="Maderoterapie - dolní končetiny"
   duration="60 min"
   price="700 Kč"
 />
 
 <PriceRow
-  service="Maderoterapie"
+  service="Maderoterapie - celé tělo"
   duration="90 min"
   price="1000 Kč"
 />
@@ -94,10 +120,10 @@ export default function Pricing() {
             </div>
           </div>
 
-          {/* Doplňkové procedury */}
+          {/* Další služby */}
           <div className="bg-[#f5efe6] rounded-[2rem] p-8 shadow-sm">
             <h3 className="text-2xl font-semibold text-[#58794B] mb-6">
-              Doplňkové procedury
+              Další služby
             </h3>
 
             <div className="space-y-4">
@@ -111,6 +137,11 @@ export default function Pricing() {
   service="Baňky k masáži"
   duration="Dle domluvy"
   price="300 Kč"
+/>
+<PriceRow
+  service="Dolní končetiny"
+  duration="45 minut"
+  price="500 Kč"
 />
           </div>
 
