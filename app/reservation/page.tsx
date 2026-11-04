@@ -1,448 +1,347 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import { supabase } from "../lib/supabase";
-const TEST_MODE = true;
-const ACCESS_CODE = "MICHELLE2026";
+
+const weekdays = [
+  "Pondělí",
+  "Úterý",
+  "Středa",
+  "Čtvrtek",
+  "Pátek",
+];
+
+const timePreferences = [
+  { label: "Dopoledne", value: "Dopoledne (08:00–12:00)" },
+  { label: "Odpoledne", value: "Odpoledne (12:00–16:00)" },
+];
+
+const initialFormData = {
+  name: "",
+  surname: "",
+  email: "",
+  phone: "",
+  service: "",
+  duration: "",
+  preferred_days: [] as string[],
+  preferred_times: [] as string[],
+  note: "",
+};
+
 export default function BookingPage() {
-const [formData, setFormData] = useState({
-  name: "",
-  surname: "",
-  email: "",
-  phone: "",
-  service: "",
-  duration: "",
-  reservation_date: "",
-reservation_time: "",
-  note: "",
-});
-const [accessCode, setAccessCode] = useState("");
-const [authorized, setAuthorized] = useState(false);
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-const { data: existingreservations, error: checkError } =
-  await supabase
-    .from("reservations")
-    .select("*")
-    .eq("reservation_date", formData.reservation_date)
-    .eq(
-  "reservation_time",
-  `${formData.reservation_time}:00`
-);
+  const [formData, setFormData] = useState(initialFormData);
+  const [submitting, setSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
 
-if (existingreservations && existingreservations.length > 0) {
-  alert("Tento termín je již obsazen.");
+  const toggleSelection = (
+    field: "preferred_days" | "preferred_times",
+    value: string
+  ) => {
+    setFormData((current) => ({
+      ...current,
+      [field]: current[field].includes(value)
+        ? current[field].filter((item) => item !== value)
+        : [...current[field], value],
+    }));
+  };
 
-  return;
-}
-const { error } = await supabase
-  .from("reservations")
-  .insert([formData]);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessage("");
 
-if (error) {
- alert(
-  "Rezervaci se nepodařilo uložit. Zkuste to prosím znovu."
-);
-  console.log(error);
-} else {
-  await fetch("/api/send-email", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(formData),
-});
-    alert(
-      `Rezervace pro ${formData.name} ${formData.surname} byla odeslána 🔥`
-    );
-    setBookedTimes([
-  ...bookedTimes,
-  formData.reservation_time,
-]);
-    setFormData({
-  name: "",
-  surname: "",
-  email: "",
-  phone: "",
-  service: "",
-  duration: "",
-  reservation_date: "",
-reservation_time: "",
-  note: "",
-});
-  }
-};
-const checkAccess = () => {
-  if (accessCode === ACCESS_CODE) {
-    sessionStorage.setItem("booking-access", ACCESS_CODE);
-    setAuthorized(true);
-  } else {
-    alert("Neplatný přístupový kód.");
-  }
-};
-const [bookedTimes, setBookedTimes] = useState<string[]>([]);
-const availableTimes = [];
-
-for (let hour = 8; hour <= 20; hour++) {
-  availableTimes.push(`${hour.toString().padStart(2, "0")}:00`);
-
-  if (hour !== 20) {
-    availableTimes.push(`${hour.toString().padStart(2, "0")}:15`);
-    availableTimes.push(`${hour.toString().padStart(2, "0")}:30`);
-    availableTimes.push(`${hour.toString().padStart(2, "0")}:45`);
-  }
-}
-useEffect(() => {
-  if (!TEST_MODE) {
-    setAuthorized(true);
-    return;
-  }
-
-  if (sessionStorage.getItem("booking-access") === ACCESS_CODE) {
-    setAuthorized(true);
-  }
-}, []);
-useEffect(() => {
-  const fetchBookedTimes = async () => {
-    if (!formData.reservation_date) return;
-
-    const { data, error } = await supabase
-      .from("reservations")
-      .select("reservation_time, duration")
-      .eq("reservation_date", formData.reservation_date);
-if (data) {
-  const blockedSlots: string[] = [];
-
-  data.forEach((reservation) => {
-    const startTime = reservation.reservation_time.slice(0, 5);
-
-    const [hours, minutes] = startTime
-      .split(":")
-      .map(Number);
-
-    const duration =
-      Number(reservation.duration) + 15;
-
-    const slotCount = duration / 15;
-
-    for (let i = 0; i < slotCount; i++) {
-      const slotDate = new Date();
-
-      slotDate.setHours(hours, minutes, 0, 0);
-
-      slotDate.setMinutes(
-        slotDate.getMinutes() + i * 15
-      );
-
-      const blockedTime = `${slotDate
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${slotDate
-        .getMinutes()
-        .toString()
-        .padStart(2, "0")}`;
-
-      blockedSlots.push(blockedTime);
+    if (formData.preferred_days.length === 0) {
+      setMessage("Vyberte prosím alespoň jeden preferovaný den.");
+      return;
     }
-  });
 
-  setBookedTimes(blockedSlots);
-}
+    if (formData.preferred_times.length === 0) {
+      setMessage("Vyberte prosím alespoň jedno preferované časové rozmezí.");
+      return;
+    }
 
-    if (error) {
-      console.log(error);
+    setSubmitting(true);
+
+    try {
+      const { error: insertError } = await supabase
+        .from("booking_requests")
+        .insert([
+          {
+            ...formData,
+            duration: Number(formData.duration),
+          },
+        ]);
+
+      if (insertError) throw insertError;
+
+      const emailResponse = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!emailResponse.ok) {
+        throw new Error(
+          "Poptávka byla uložena, ale e-mail se nepodařilo odeslat."
+        );
+      }
+
+      setFormData(initialFormData);
+
+      setMessage(
+        "Děkujeme za vaši poptávku. Preferované termíny prověříme a co nejdříve vás kontaktujeme. Odesláním poptávky ještě nevzniká závazná rezervace."
+      );
+    } catch (error) {
+      console.error("Chyba při odesílání poptávky:", error);
+
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Poptávku se nepodařilo odeslat. Zkuste to prosím znovu."
+      );
+    } finally {
+      setSubmitting(false);
     }
   };
 
-  fetchBookedTimes();
-
-}, [formData.reservation_date]);
-
-if (TEST_MODE && !authorized) {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#f5efe6] px-6">
-      <div className="max-w-md w-full bg-white rounded-2xl p-8 shadow-lg">
-
-        <h1 className="text-3xl font-semibold mb-4 text-[#58794B]">
-          Testovací provoz
-        </h1>
-
-        <p className="text-[#7b6a58] mb-6">
-          Online rezervační systém je momentálně dostupný pouze pro vybrané testovací klienty.
-          Pokud jste od nás obdrželi přístupový kód, zadejte jej níže.
-        </p>
-
-  <form
-          onSubmit={(e) => {
-          e.preventDefault();
-          checkAccess();
-        }}
-        >
-
-        <input
-          type="password"
-          value={accessCode}
-          onChange={(e) => setAccessCode(e.target.value)}
-          placeholder="Přístupový kód"
-          className="w-full p-4 rounded-2xl border-2 border-[#4a4a4a] text-[#7b6a58] placeholder:text-[#7b6a58] focus:outline-none focus:border-[#58794B] focus:ring-1 focus:ring-[#58794B] transition"
-        />
-
-         <button
-          type="submit"
-          className="mt-6 w-full bg-[#58794B] text-[#f5efe6] py-4 rounded-full"
-        >
-          Pokračovat
-        </button>
-        </form>
-
-      </div>
-    </main>
-  );
-}
-  return (
-  
     <main className="min-h-screen bg-[#f5efe6] text-[#2f3e34] px-6 py-20">
-
       <div className="max-w-3xl mx-auto">
-
-        <h1 className="text-5xl font-semibold mb-6">
-          Rezervace termínu
+        <h1 className="text-4xl md:text-5xl font-semibold mb-6">
+          Poptávka termínu
         </h1>
 
         <p className="text-[#7b6a58] mb-12">
-          Vyberte službu a odešlete rezervační formulář.
+          Vyberte službu a své časové preference. Ozveme se vám s návrhem
+          konkrétního termínu.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-<input
-  type="text"
-  placeholder="Jméno"
-  required
-  value={formData.name}
-  onChange={(e) =>
-    setFormData({ ...formData, name: e.target.value })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
-<input
-  type="text"
-  placeholder="Příjmení"
-  required
-  value={formData.surname}
-  onChange={(e) =>
-    setFormData({ ...formData, surname: e.target.value })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
-<input
-  type="email"
-  placeholder="Email"
-  required
-  value={formData.email}
-  onChange={(e) =>
-    setFormData({ ...formData, email: e.target.value })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
-<input
-  type="tel"
-  placeholder="Telefon"
-  required
-  minLength={9}
-  pattern="[0-9+ ]+"
-  value={formData.phone}
-  onChange={(e) =>
-    setFormData({ ...formData, phone: e.target.value })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
-<select
-  required
-  value={formData.service}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      service: e.target.value,
-      duration: "",
-    })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
->
-  <option value="">
-    -- Vyberte službu --
-  </option>
+          <input
+            type="text"
+            placeholder="Jméno"
+            required
+            value={formData.name}
+            onChange={(e) =>
+              setFormData({ ...formData, name: e.target.value })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          />
 
-  <option value="Klasická masáž">
-    Klasická masáž
-  </option>
+          <input
+            type="text"
+            placeholder="Příjmení"
+            required
+            value={formData.surname}
+            onChange={(e) =>
+              setFormData({ ...formData, surname: e.target.value })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          />
 
-  <option value="Relaxační masáž">
-    Relaxační masáž
-  </option>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          />
 
-  <option value="Těhotenská masáž - kompletní relax">
-    Těhotenská masáž - kompletní relax
-  </option>
+          <input
+            type="tel"
+            placeholder="Telefon"
+            required
+            minLength={9}
+            pattern="[0-9+ ]+"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          />
 
-  <option value="Těhotenská masáž - základní uvolnění">
-    Těhotenská masáž - základní uvolnění
-  </option>
+          <select
+            required
+            value={formData.service}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                service: e.target.value,
+                duration: "",
+              })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          >
+            <option value="">-- Vyberte službu --</option>
 
-  <option value="Maderoterapie">
-    Maderoterapie
-  </option>
+            <option value="Klasická masáž">
+              Klasická masáž
+            </option>
 
-  <option value="Maderoterapie a anticelulitidní zábal">
-    Maderoterapie a anticelulitidní zábal
-  </option>
+            <option value="Relaxační masáž">
+              Relaxační masáž
+            </option>
 
-  <option value="Anticelulitidní zábal">
-    Anticelulitidní zábal
-  </option>
+            <option value="Těhotenská masáž - kompletní relax">
+              Těhotenská masáž - kompletní relax
+            </option>
 
-  <option value="Masáž zad a šíje">
-    Masáž zad a šíje
-  </option>
-</select>
+            <option value="Těhotenská masáž - základní uvolnění">
+              Těhotenská masáž - základní uvolnění
+            </option>
 
-<select
-  required
-  value={formData.duration}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      duration: e.target.value,
-    })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
->
-  <option value="">
-    -- Vyberte délku --
-  </option>
+            <option value="Maderoterapie">
+              Maderoterapie
+            </option>
 
-  {formData.service === "Klasická masáž" && (
-    <option value="90">90 minut</option>
-  )}
+            <option value="Maderoterapie a anticelulitidní zábal">
+              Maderoterapie a anticelulitidní zábal
+            </option>
 
-  {formData.service === "Relaxační masáž" && (
-    <option value="60">60 minut</option>
-  )}
+            <option value="Anticelulitidní zábal">
+              Anticelulitidní zábal
+            </option>
 
-  {formData.service === "Těhotenská masáž - kompletní relax" && (
-    <option value="60">60 minut</option>
-  )}
+            <option value="Masáž zad a šíje">
+              Masáž zad a šíje
+            </option>
+          </select>
 
-  {formData.service === "Těhotenská masáž - základní uvolnění" && (
-    <option value="45">45 minut</option>
-  )}
+          <select
+            required
+            value={formData.duration}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                duration: e.target.value,
+              })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          >
+            <option value="">-- Vyberte délku --</option>
 
-  {formData.service === "Maderoterapie" && (
-    <>
-      <option value="60">60 minut</option>
-      <option value="90">90 minut</option>
-    </>
-  )}
+            {formData.service === "Klasická masáž" && (
+              <option value="90">90 minut</option>
+            )}
 
-  {formData.service === "Maderoterapie a anticelulitidní zábal" && (
-    <option value="90">90 minut</option>
-  )}
+            {formData.service === "Relaxační masáž" && (
+              <option value="60">60 minut</option>
+            )}
 
-  {formData.service === "Anticelulitidní zábal" && (
-    <option value="30">30 minut</option>
-  )}
+            {formData.service === "Těhotenská masáž - kompletní relax" && (
+              <option value="60">60 minut</option>
+            )}
 
-  {formData.service === "Masáž zad a šíje" && (
-    <option value="45">45 minut</option>
-  )}
-</select>
+            {formData.service === "Těhotenská masáž - základní uvolnění" && (
+              <option value="45">45 minut</option>
+            )}
 
-<input
-  type="date"
-  required
-  min={new Date().toISOString().split("T")[0]}
-  value={formData.reservation_date}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      reservation_date: e.target.value,
-    })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
-<select
-  required
-  value={formData.reservation_time}
-  onChange={(e) =>
-    setFormData({
-      ...formData,
-      reservation_time: e.target.value,
-    })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
->
-  <option value="">Vyberte čas</option>
+            {formData.service === "Maderoterapie" && (
+              <>
+                <option value="60">60 minut</option>
+                <option value="90">90 minut</option>
+              </>
+            )}
 
-{availableTimes
-  .filter((time) => {
-    if (bookedTimes.includes(time)) return false;
+            {formData.service === "Maderoterapie a anticelulitidní zábal" && (
+              <option value="90">90 minut</option>
+            )}
 
-    const [hours, minutes] = time.split(":").map(Number);
+            {formData.service === "Anticelulitidní zábal" && (
+              <option value="30">30 minut</option>
+            )}
 
-    const slotTime = new Date();
-    slotTime.setHours(hours, minutes, 0, 0,);
+            {formData.service === "Masáž zad a šíje" && (
+              <option value="45">45 minut</option>
+            )}
+          </select>
 
-    // +2 hodiny předstih
-    const today = new Date().toISOString().split("T")[0];
+          <fieldset className="rounded-2xl bg-white border border-[#d8cfc2] p-5">
+            <legend className="px-2 font-medium">
+              Preferované dny
+            </legend>
 
-    if (formData.reservation_date === today) {
-      const minimumTime = new Date();
-      minimumTime.setHours(minimumTime.getHours() + 2);
+            <p className="text-sm text-[#7b6a58] mb-4">
+              Můžete vybrat více dnů.
+            </p>
 
-      if (slotTime < minimumTime) {
-        return false;
-      }
-    }
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {weekdays.map((day) => (
+                <label key={day} className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.preferred_days.includes(day)}
+                    onChange={() =>
+                      toggleSelection("preferred_days", day)
+                    }
+                    className="h-4 w-4 accent-[#58794B]"
+                  />
 
-    // kontrola konce pracovní doby
-    const duration =
-      Number(formData.duration || 0) + 15;
+                  <span>{day}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
 
-    const endTime = new Date(slotTime);
-    endTime.setMinutes(
-      endTime.getMinutes() + duration
-    );
+          <fieldset className="rounded-2xl bg-white border border-[#d8cfc2] p-5">
+            <legend className="px-2 font-medium">
+              Preferovaný čas
+            </legend>
 
-    const closingTime = new Date(slotTime);
-    closingTime.setHours(20, 0, 0, 0);
+            <p className="text-sm text-[#7b6a58] mb-4">
+              Můžete vybrat jedno nebo obě rozmezí.
+            </p>
 
-    return endTime <= closingTime;
-  })
-  .map((time) => (
-    <option key={time} value={time}>
-      {time}
-    </option>
-  ))}
-</select>
+            <div className="space-y-3">
+              {timePreferences.map((time) => (
+                <label key={time.value} className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={formData.preferred_times.includes(time.value)}
+                    onChange={() =>
+                      toggleSelection("preferred_times", time.value)
+                    }
+                    className="h-4 w-4 accent-[#58794B]"
+                  />
+
+                  <span>
+                    {time.label} ({time.value.match(/\((.*)\)/)?.[1]})
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
           <textarea
-  placeholder="Poznámka"
-  rows={5}
-  value={formData.note}
-  onChange={(e) =>
-    setFormData({ ...formData, note: e.target.value })
-  }
-  className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
-/>
+            placeholder="Poznámka (nepovinné)"
+            rows={5}
+            value={formData.note}
+            onChange={(e) =>
+              setFormData({ ...formData, note: e.target.value })
+            }
+            className="w-full p-4 rounded-2xl bg-white border border-[#d8cfc2]"
+          />
+
+          {message && (
+            <p
+              role="status"
+              className="rounded-xl bg-white p-4 text-[#58794B]"
+            >
+              {message}
+            </p>
+          )}
 
           <button
-  type="submit"
-  className="bg-[#2f3e34] text-[#f5efe6] px-8 py-4 rounded-full hover:opacity-90 transition"
->
-  Odeslat rezervaci
-</button>
-
+            type="submit"
+            disabled={submitting}
+            className="bg-[#2f3e34] text-[#f5efe6] px-8 py-4 rounded-full hover:opacity-90 transition disabled:opacity-60"
+          >
+            {submitting ? "Odesílám…" : "Odeslat poptávku"}
+          </button>
         </form>
-
       </div>
-
     </main>
   );
 }
