@@ -105,32 +105,32 @@ export default function Hero() {
 
           {/* BENEFITY */}
 
-<div className="mb-5 md:mb-7 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-1.5 sm:grid-cols-4 sm:gap-y-5">
-  {benefits.map((benefit) => {
-    const Icon = benefit.icon;
+          <div className="mb-5 md:mb-7 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-y-5">
+            {benefits.map((benefit) => {
+              const Icon = benefit.icon;
 
-    return (
-      <div
-        key={benefit.title}
-        className="flex flex-col items-center gap-2 text-center"
-      >
-        <div className="flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
-          <Icon className="text-sm md:text-lg text-[#24432B]" />
-        </div>
-
-        <div>
-          <p className="text-[9px] font-semibold uppercase tracking-wider text-[#24432B] md:text-[10px]">
-            {benefit.title}
-          </p>
-
-          <p className="text-[10px] text-[#766E5E]">
-            {benefit.description}
-          </p>
-        </div>
-      </div>
-    );
-  })}
+              return (
+                <div
+                  key={benefit.title}
+                  className="flex flex-col items-center gap-2 text-center"
+                >
+                  <div className="flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
+  <Icon className="text-sm md:text-lg text-[#24432B]" />
 </div>
+                  <div>
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-[#24432B] md:text-[10px]">
+                      {benefit.title}
+                    </p>
+
+                    <p className="text-[10px] text-[#766E5E]">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
           {/* TLAČÍTKA */}
 
           <div className="relative z-10 flex w-full flex-col gap-2 md:gap-3 sm:w-auto sm:flex-row">
