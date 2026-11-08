@@ -172,16 +172,22 @@ const [activeSection, setActiveSection] = useState("");
                 className="absolute left-1/2 -translate-x-1/2 top-[-23px] flex h-[132px] w-[132px] items-center justify-center rounded-full bg-[#E9DCC4] border border-[#BDA77F] shadow-[0_5px_20px_rgba(36,67,43,0.12)]"
               >
                 <a
-                  href="/"
-                  aria-label="Masáže Michelle – úvodní stránka"
-                  className="block w-[92%] h-[92%] rounded-full overflow-hidden"
-                >
-                  <img
-                    src="/logo-kulate.png"
-                    alt="Masáže Michelle"
-                    className="w-full h-full object-contain"
-                  />
-                </a>
+  href="/"
+  aria-label="Masáže Michelle – úvodní stránka"
+  className="block"
+>
+  <img
+    src="/logo-horizontal.jpg"
+    alt="Masáže Michelle"
+    className="block w-[170px] h-auto md:hidden"
+  />
+
+  <img
+    src="/logo-kulate.png"
+    alt="Masáže Michelle"
+    className="hidden md:block w-[74px] h-auto"
+  />
+</a>
               </div>
             </div>
 
