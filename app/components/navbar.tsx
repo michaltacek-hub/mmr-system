@@ -251,8 +251,8 @@ className="block -translate-x-3 md:translate-x-0"
 
       {/* MOBILNÍ MENU */}
 
-      <div
-       className={`lg:hidden fixed inset-0 top-[104px] bg-[#F7F0E2] z-[60] transition-all duration-500 ${
+     <div
+  className={`lg:hidden fixed inset-0 top-[104px] bg-[#F7F0E2] z-[60] transition-all duration-500 ${
           isOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-5"
