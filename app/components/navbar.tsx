@@ -194,16 +194,22 @@ const [activeSection, setActiveSection] = useState("");
 
           <div className="lg:hidden h-full flex items-center justify-between">
             <a
-              href="/"
-              aria-label="Masáže Michelle – úvodní stránka"
-             className="block w-[74px]"
-            >
-              <img
-                src="/logo-kulate.png"
-                alt="Masáže Michelle"
-                className="w-full h-auto"
-              />
-            </a>
+  href="/"
+  aria-label="Masáže Michelle – úvodní stránka"
+  className="block"
+>
+  <img
+    src="/logo-horizont.jpg"
+    alt="Masáže Michelle"
+    className="block w-[170px] h-auto md:hidden"
+  />
+
+  <img
+    src="/logo-kulate.png"
+    alt="Masáže Michelle"
+    className="hidden md:block w-[74px] h-auto"
+  />
+</a>
 
             <div className="flex items-center gap-5">
               <a
