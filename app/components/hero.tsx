@@ -105,7 +105,7 @@ export default function Hero() {
 
           {/* BENEFITY */}
 
-          <div className="mb-5 md:mb-7 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-y-5">
+          <div className="mb-5 md:mb-7 grid w-full max-w-xl grid-cols-2 gap-x-1 gap-y-3 sm:grid-cols-4 sm:gap-y-5">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
 
