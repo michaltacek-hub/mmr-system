@@ -97,7 +97,7 @@ const [activeSection, setActiveSection] = useState("");
 
   return (
     <header
-    className="fixed top-0 left-0 right-0 z-50 grid grid-rows-[36px_82px] overflow-visible"
+   className="fixed top-0 left-0 right-0 z-50 grid grid-rows-[36px_68px] lg:grid-rows-[36px_82px] overflow-visible"
     >
       {/* HORNÍ INFORMAČNÍ LIŠTA */}
 
