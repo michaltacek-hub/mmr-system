@@ -214,11 +214,12 @@ className="block -translate-x-3 md:translate-x-0"
             <div className="flex items-center gap-5">
 
               <button
-  onClick={() => setIsOpen(!isOpen)}
+  type="button"
+  onClick={() => setIsOpen((prev) => !prev)}
   aria-label={isOpen ? "Zavřít menu" : "Otevřít menu"}
   aria-expanded={isOpen}
-  className="w-10 h-10 flex flex-col items-center justify-center gap-[6px]"
->
+  className="relative z-[70] pointer-events-auto cursor-pointer w-10 h-10 flex flex-col items-center justify-center gap-[6px]"
+  >
   <span
     className={`h-[1.5px] bg-[#24432B] transition-all duration-300 ${
       isOpen
@@ -251,7 +252,7 @@ className="block -translate-x-3 md:translate-x-0"
       {/* MOBILNÍ MENU */}
 
       <div
-        className={`lg:hidden fixed inset-0 top-[74px] bg-[#F7F0E2] z-[-1] transition-all duration-500 ${
+       className={`lg:hidden fixed inset-0 top-[74px] bg-[#F7F0E2] z-[60] transition-all duration-500 ${
           isOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-5"

@@ -25,7 +25,7 @@ export default function Hero() {
     <section
   id="hero"
   className="
-   relative isolate min-h-[calc(100svh-190px)]
+   relative isolate z-0 min-h-[calc(100svh-190px)]
     overflow-hidden
     bg-[#F7F0E2]
     pt-[118px]
@@ -44,13 +44,13 @@ export default function Hero() {
 
       {/* BOTANIKA – LEVÝ HORNÍ ROH */}
 
-      <div className="pointer-events-none absolute left-[-100px] top-[100px] z-[2] w-[280px] md:left-[-40px] md:top-[100px] md:w-[500px]">
+      <div className="pointer-events-none absolute left-[25px] top-[120px] z-[2] w-[140px] md:left-[-40px] md:top-[100px] md:w-[500px]">
         <Image
           src="/hero-dekorace/botanika%205.png"
           alt=""
           width={1536}
           height={1024}
-          className="h-auto w-full -rotate-20 md:rotate-0"
+          className="h-auto w-full -rotate-0 scale-155 md:rotate-0 md:scale-100"
         />
       </div>
 
@@ -63,7 +63,7 @@ export default function Hero() {
           max-w-[1600px]
           grid-cols-1
           items-center
-          gap-12
+          gap-14
           px-6 py-12
           md:px-12
           min-[900px]:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)]
@@ -97,7 +97,7 @@ export default function Hero() {
 
           {/* PODNADPIS */}
 
-          <p className="mb-6 max-w-xl text-xs leading-relaxed text-[#625D4E] md:text-sm xl:text-base">
+          <p className="mb-5 max-w-xl text-[13px] leading-relaxed text-[#625D4E] md:mb-6 md:text-sm xl:text-base">
             Péče, relaxace a harmonie v každém doteku.
             Zastavte se, uvolněte napětí a dopřejte
             svému tělu zasloužený odpočinek.
@@ -114,10 +114,9 @@ export default function Hero() {
                   key={benefit.title}
                   className="flex flex-col items-center gap-2 text-center"
                 >
-                  <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
-                    <Icon className="text-base md:text-lg text-[#24432B]" />
-                  </div>
-
+                  <div className="flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
+  <Icon className="text-sm md:text-lg text-[#24432B]" />
+</div>
                   <div>
                     <p className="text-[9px] font-semibold uppercase tracking-wider text-[#24432B] md:text-[10px]">
                       {benefit.title}
@@ -134,7 +133,7 @@ export default function Hero() {
 
           {/* TLAČÍTKA */}
 
-          <div className="flex w-full flex-col gap-2 md:gap-3 sm:w-auto sm:flex-row">
+          <div className="relative z-10 flex w-full flex-col gap-2 md:gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/reservation"
               className="group flex items-center justify-center gap-3 rounded-full bg-[#24432B] px-7 py-3 text-xs text-[#F7F0E2] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#35583A]"
@@ -153,15 +152,17 @@ export default function Hero() {
               Zobrazit služby
             </a>
           </div>
-          {/* JEMNÝ DEKORATIVNÍ MOTIV POD TLAČÍTKY */}
+          {/* BOTANIKA – POD TLAČÍTKY (POUZE MOBIL) */}
 
-            <div className="mt-6 flex items-center justify-center gap-3 md:hidden">
-  <           span className="h-px w-12 bg-[#B58A43]/50" />
-
-              <FaLeaf className="rotate-[-35deg] text-sm text-[#8A7048]/70" />
-
-              <span className="h-px w-12 bg-[#B58A43]/50" />
-            </div>
+<div className="pointer-events-none relative translate-x-45 -translate-y-65 z-0 mt-2 w-[250px] self-center md:hidden">
+  <Image
+    src="/hero-dekorace/botanika%206.png"
+    alt=""
+    width={1536}
+    height={1024}
+    className="h-auto w-full rotate-[-270deg] "
+  />
+</div>
           </div>
 
         {/* PRAVÁ ČÁST – SPOLEČNÁ BOTANICKÁ KOMPOZICE */}
@@ -171,7 +172,10 @@ export default function Hero() {
     relative isolate mx-auto
     flex w-full max-w-[560px]
     items-center justify-center
-    lg:ml-auto"
+    -mt-37
+    min-[900px]:mt-0
+    lg:ml-auto
+  "
 >
 
           {/* BOTANIKA – PRAVÝ HORNÍ ROH */}
@@ -222,9 +226,11 @@ export default function Hero() {
   <div
     className="
       relative z-10
-      h-[min(68svh,620px)]
+      h-[min(48svh,440px)]
       w-full
-      min-h-[400px]
+      min-h-[300px]
+      min-[900px]:h-[min(68svh,620px)]
+      min-[900px]:min-h-[400px]
       overflow-hidden
       rounded-t-[48%]
       rounded-b-[32px]

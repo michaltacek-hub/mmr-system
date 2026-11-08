@@ -9,7 +9,7 @@ import CTA from "./components/cta";
 import Footer from "./components/footer";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f5efe6] text-[#2f3e34] overflow-hidden">
+    <main className="min-h-screen bg-[#f5efe6] text-[#2f3e34]">
 <Navbar />
 <Hero />
 <About />
