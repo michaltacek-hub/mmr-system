@@ -199,7 +199,7 @@ const [activeSection, setActiveSection] = useState("");
   className="block"
 >
   <img
-    src="/logo-horizont.jpg"
+    src="/logo-horizont.png"
     alt="Masáže Michelle"
     className="block w-[155px] h-auto md:hidden"
   />
