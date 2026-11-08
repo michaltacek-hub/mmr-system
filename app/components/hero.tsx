@@ -57,7 +57,7 @@ export default function Hero() {
       {/* HLAVNÍ ROZLOŽENÍ */}
 
       <div
-        className="
+        className=" 
           relative z-10 mx-auto grid
           min-h-[calc(100svh-308px)]
           max-w-[1600px]
