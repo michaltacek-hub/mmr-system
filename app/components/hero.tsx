@@ -50,7 +50,7 @@ export default function Hero() {
           alt=""
           width={1536}
           height={1024}
-          className="h-auto w-full"
+          className="h-auto w-full -rotate-20 md:rotate-0"
         />
       </div>
 
