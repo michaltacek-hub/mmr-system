@@ -22,7 +22,7 @@ export default function CTA() {
   href="/reservation"
   className="inline-block bg-[#f5efe6] text-[#58794B] px-8 py-4 rounded-full text-lg hover:opacity-90 transition"
 >
-  Rezervovat online
+  Poptat termín
 </a>
 
         </div>
