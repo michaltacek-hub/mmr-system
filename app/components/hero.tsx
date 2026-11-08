@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* BOTANIKA – LEVÝ HORNÍ ROH */}
 
-      <div className="pointer-events-none absolute left-[-25px] top-[125px] z-[2] w-[340px] md:left-[-40px] md:top-[100px] md:w-[500px]">
+      <div className="pointer-events-none absolute left-[-85px] top-[110px] z-[2] w-[280px] md:left-[-40px] md:top-[100px] md:w-[500px]">
         <Image
           src="/hero-dekorace/botanika%205.png"
           alt=""
