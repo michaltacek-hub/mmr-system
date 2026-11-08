@@ -105,7 +105,7 @@ export default function Hero() {
 
           {/* BENEFITY */}
 
-          <div className="mb-7 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4">
+          <div className="mb-5 md:mb-7 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4 sm:gap-y-5">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
 
@@ -114,8 +114,8 @@ export default function Hero() {
                   key={benefit.title}
                   className="flex flex-col items-center gap-2 text-center"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
-                    <Icon className="text-lg text-[#24432B]" />
+                  <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full border border-[#24432B]/50 bg-[#F7F0E2]/80">
+                    <Icon className="text-base md:text-lg text-[#24432B]" />
                   </div>
 
                   <div>
@@ -134,7 +134,7 @@ export default function Hero() {
 
           {/* TLAČÍTKA */}
 
-          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          <div className="flex w-full flex-col gap-2 md:gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/reservation"
               className="group flex items-center justify-center gap-3 rounded-full bg-[#24432B] px-7 py-3 text-xs text-[#F7F0E2] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#35583A]"
