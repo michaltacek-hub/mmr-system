@@ -103,7 +103,7 @@ const [activeSection, setActiveSection] = useState("");
 
       <div className="min-h-0 overflow-hidden">
         <div className="h-9 bg-[#24432B]/95 backdrop-blur-md text-[#F7F0E2] border-b border-[#DCC69A]/20">
-          <div className="max-w-[1600px] mx-auto h-full pl-8 pr-5 md:px-10 xl:px-16 flex items-center justify-end">
+          <div className="max-w-[1600px] mx-auto h-full px-5 md:px-10 xl:px-16 flex items-center justify-center md:justify-end">
             <div className="flex items-center gap-3 md:gap-5 lg:gap-7 text-[10px] md:text-[11px] tracking-wide translate-x-2 md:translate-x-0">
               <a
                 href="tel:+420735958842"
@@ -196,7 +196,7 @@ const [activeSection, setActiveSection] = useState("");
             <a
   href="/"
   aria-label="Masáže Michelle – úvodní stránka"
-  className="block"
+className="block -translate-x-3 md:translate-x-0"
 >
   <img
     src="/logo-horizont.png"
