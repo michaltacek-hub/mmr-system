@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* BOTANIKA – LEVÝ HORNÍ ROH */}
 
-      <div className="pointer-events-none absolute left-[-85px] top-[110px] z-[2] w-[280px] md:left-[-40px] md:top-[100px] md:w-[500px]">
+      <div className="pointer-events-none absolute left-[-100px] top-[100px] z-[2] w-[280px] md:left-[-40px] md:top-[100px] md:w-[500px]">
         <Image
           src="/hero-dekorace/botanika%205.png"
           alt=""
@@ -153,7 +153,16 @@ export default function Hero() {
               Zobrazit služby
             </a>
           </div>
-        </div>
+          {/* JEMNÝ DEKORATIVNÍ MOTIV POD TLAČÍTKY */}
+
+            <div className="mt-6 flex items-center justify-center gap-3 md:hidden">
+  <           span className="h-px w-12 bg-[#B58A43]/50" />
+
+              <FaLeaf className="rotate-[-35deg] text-sm text-[#8A7048]/70" />
+
+              <span className="h-px w-12 bg-[#B58A43]/50" />
+            </div>
+          </div>
 
         {/* PRAVÁ ČÁST – SPOLEČNÁ BOTANICKÁ KOMPOZICE */}
 
