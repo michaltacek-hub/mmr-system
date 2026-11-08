@@ -126,7 +126,7 @@ const [activeSection, setActiveSection] = useState("");
                 <span>PO–PA · DLE OBJEDNÁNÍ</span>
               </div>
 
-              <div className="flex items-center gap-4 border-l border-[#DCC69A]/30 pl-4">
+              <div className="hidden lg:flex items-center gap-4 border-l border-[#DCC69A]/30 pl-4">
                 <a
                   href={instagramUrl}
                   target="_blank"
@@ -212,32 +212,37 @@ const [activeSection, setActiveSection] = useState("");
 </a>
 
             <div className="flex items-center gap-5">
-              <a
-                href="tel:+420735958842"
-                aria-label="Zavolat"
-                className="text-[#24432B]"
-              >
-                <FaPhoneAlt size={18} />
-              </a>
 
               <button
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label={isOpen ? "Zavřít menu" : "Otevřít menu"}
-                aria-expanded={isOpen}
-                className="w-10 h-10 flex flex-col items-center justify-center gap-[6px]"
-              >
-                <span
-                  className={`w-7 h-[1.5px] bg-[#24432B] transition-all duration-300 ${
-                    isOpen ? "translate-y-[3.75px] rotate-45" : ""
-                  }`}
-                />
+  onClick={() => setIsOpen(!isOpen)}
+  aria-label={isOpen ? "Zavřít menu" : "Otevřít menu"}
+  aria-expanded={isOpen}
+  className="w-10 h-10 flex flex-col items-center justify-center gap-[6px]"
+>
+  <span
+    className={`h-[1.5px] bg-[#24432B] transition-all duration-300 ${
+      isOpen
+        ? "w-7 translate-y-[7.5px] rotate-45"
+        : "w-7"
+    }`}
+  />
 
-                <span
-                  className={`w-7 h-[1.5px] bg-[#24432B] transition-all duration-300 ${
-                    isOpen ? "-translate-y-[3.75px] -rotate-45" : ""
-                  }`}
-                />
-              </button>
+  <span
+    className={`h-[1.5px] bg-[#24432B] transition-all duration-300 ${
+      isOpen
+        ? "w-7 opacity-0"
+        : "w-[19px]"
+    }`}
+  />
+
+  <span
+    className={`h-[1.5px] bg-[#24432B] transition-all duration-300 ${
+      isOpen
+        ? "w-7 -translate-y-[7.5px] -rotate-45"
+        : "w-[23px]"
+    }`}
+  />
+</button>
             </div>
           </div>
         </div>
