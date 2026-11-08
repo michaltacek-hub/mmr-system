@@ -249,76 +249,82 @@ className="block -translate-x-3 md:translate-x-0"
         </div>
       </div>
 
-      {/* MOBILNÍ MENU */}
+     {/* MOBILNÍ MENU */}
 
-     <div
-  className={`lg:hidden fixed inset-0 top-[104px] bg-[#F7F0E2] z-[60] transition-all duration-500 ${
-          isOpen
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-5"
-        }`}
+<div
+  className={`lg:hidden fixed top-[104px] left-0 right-0 bottom-0 bg-[#F7F0E2] z-[60] overflow-y-auto transition-all duration-500 ${
+    isOpen
+      ? "opacity-100 visible translate-y-0"
+      : "opacity-0 invisible -translate-y-5"
+  }`}
+>
+  <div className="min-h-full flex flex-col px-8 pt-5 pb-5">
+
+    {/* NAVIGAČNÍ ODKAZY */}
+    <div className="flex flex-col">
+      {[...navigationLeft, ...navigationRight].map((item) => (
+        <a
+          key={item.id}
+          href={item.href}
+          onClick={closeMenu}
+          className="flex items-center justify-between py-3.5 border-b border-[#D8C9AA]/70"
+        >
+          <span className="font-serif text-2xl text-[#24432B]">
+            {item.label}
+          </span>
+
+          <span className="text-[#B58A43] text-xl">
+            →
+          </span>
+        </a>
+      ))}
+    </div>
+
+    {/* SPODNÍ ČÁST MENU */}
+    <div className="mt-auto pt-6">
+
+      {/* REZERVACE */}
+      <a
+        href="/reservation"
+        onClick={closeMenu}
+        className="block text-center rounded-full bg-[#24432B] text-[#F7F0E2] py-4 uppercase tracking-[0.15em] text-sm"
       >
-        <div className="h-full flex flex-col px-8 pt-10 pb-10">
-          <div className="flex flex-col">
-            {[...navigationLeft, ...navigationRight].map((item, index) => (
-              <a
-                key={item.id}
-                href={item.href}
-                onClick={closeMenu}
-                className="flex items-center justify-between py-5 border-b border-[#D8C9AA]/70"
-              >
-                <span className="flex items-center gap-5">
-                  <span className="text-xs text-[#B58A43] font-serif">
-                    0{index + 1}
-                  </span>
+        Poptat termín
+      </a>
 
-                  <span className="font-serif text-2xl text-[#24432B]">
-                    {item.label}
-                  </span>
-                </span>
+      {/* SOCIÁLNÍ SÍTĚ */}
+      <div className="flex justify-center items-center gap-8 mt-6">
 
-                <span className="text-[#B58A43] text-xl">→</span>
-              </a>
-            ))}
-          </div>
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="text-[#E4405F]"
+        >
+          <FaInstagram size={24} />
+        </a>
 
-          <div className="mt-auto">
-            <a
-              href="/reservation"
-              onClick={closeMenu}
-              className="block text-center rounded-full bg-[#24432B] text-[#F7F0E2] py-5 uppercase tracking-[0.15em] text-sm"
-            >
-              Poptat termín
-            </a>
+        <a
+          href={facebookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="text-[#1877F2]"
+        >
+          <FaFacebook size={23} />
+        </a>
 
-            <div className="flex justify-center gap-8 mt-8">
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-[#E4405F]"
-              >
-                <FaInstagram size={24} />
-              </a>
-
-              <a
-                href={facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-[#1877F2]"
-              >
-                <FaFacebook size={23} />
-              </a>
-            </div>
-
-            <p className="text-center text-[10px] tracking-[0.25em] text-[#8A806E] mt-7">
-              MASÁŽE MICHELLE
-            </p>
-          </div>
-        </div>
       </div>
+
+      {/* PODPIS */}
+      <p className="text-center text-[10px] tracking-[0.25em] text-[#8A806E] mt-5">
+        MASÁŽE MICHELLE
+      </p>
+
+    </div>
+  </div>
+</div>
     </header>
   );
 }
